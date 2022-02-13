@@ -1,0 +1,158 @@
+.leftNavigation {
+  background-color: var(--primary-white);
+  min-height: calc(100vh - var(--nav-size));
+  height: 100%;
+  padding: 1.5em;
+  margin: 0 1.5em;
+  border-radius: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.leftNavigation__profileCard {
+  padding: 1.5em;
+  background-color: var(--secondary-white);
+  border-radius: 2em;
+}
+
+.leftNavigation__profileCard__iconParent {
+  background-color: var(--primary-white);
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+  margin-right: 1em;
+  text-align: center;
+}
+
+.leftNavigation__profileCard__iconParent__iconSelf {
+  color: var(--secondary-grey);
+  font-size: 1.1em;
+  line-height: 3em;
+}
+
+.leftNavigation__profileCard_title {
+  font-size: 1.1em !important;
+  font-weight: 500 !important;
+  color: var(--secondary-grey);
+}
+
+.leftNavigation__profileCard__information {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: var(--primary-white);
+  border-radius: 3em;
+  display: flex;
+  align-items: center;
+}
+
+.leftNavigation__profileCard__information__profileImage {
+  width: 4em;
+  height: 4em;
+  border-radius: 4em;
+  margin-right: 2em;
+  object-fit: cover;
+}
+
+.leftNavigation__profileCard__information__name {
+  font-size: 1.1em !important;
+  font-weight: 400 !important;
+  color: var(--primary-black);
+}
+
+.leftNavigation__profileCard__information__age {
+  font-size: 1em;
+  justify-self: center;
+  color: var(--primary-grey);
+}
+
+.leftNavigation__profileCard__information__accountType {
+  color: var(--tph-gold);
+  margin-left: 1em;
+}
+
+.leftNavigation__item {
+  cursor: pointer;
+  padding: 1em;
+  border-radius: 3em;
+  margin-top: 1em;
+}
+
+.leftNavigation__item__active {
+  background-color: var(--secondary-white);
+  border-radius: 3em;
+}
+
+.leftNavigation__item__iconParent {
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+  text-align: center;
+  display: flex;
+}
+
+.profileInformation .leftNavigation__item__iconParent {
+  background-color: #57475b;
+}
+
+.resetPassword .leftNavigation__item__iconParent {
+  background-color: #e68868;
+}
+
+.changeAccountType .leftNavigation__item__iconParent {
+  background-color: #fbb615;
+}
+
+.faq .leftNavigation__item__iconParent {
+  background-color: #7ecdc7;
+}
+
+.contactUs .leftNavigation__item__iconParent {
+  background-color: #65ca69;
+}
+
+.logout .leftNavigation__item__iconParent {
+  background-color: #e95466;
+}
+
+.leftNavigation__item__iconParent
+  > .leftNavigation__item__iconParent__iconSelf {
+  color: var(--primary-white);
+  margin: auto;
+}
+
+.leftNavigation__item__title {
+  font-size: 1em;
+  margin-left: 1em;
+  display: block;
+  color: var(--primary-black);
+}
+
+.leftNavigation__item__arrowParent {
+  background-color: var(--primary-white);
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+  text-align: center;
+  display: flex;
+}
+
+.leftNavigation__item__arrowParent
+  .leftNavigation__item__arrowParent__iconSelf {
+  color: var(--secondary-grey);
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .leftNavigation {
+    margin: 0;
+    border-radius: 0 !important;
+    padding: 1.5em 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .leftNavigation {
+    margin: 0;
+  }
+}

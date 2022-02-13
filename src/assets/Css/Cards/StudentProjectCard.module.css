@@ -1,0 +1,108 @@
+.card {
+  background-color: var(--primary-white);
+  border-radius: var(--border-radius);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+  user-select: none;
+}
+
+.card:hover {
+  transform: scale(1.15);
+}
+
+.card__bg {
+  padding: 1.5em;
+  background-image: url("../../Images/pattern-1.svg");
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(95, 81, 96, 0.9);
+  text-align: center;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.card__bg__vector {
+  height: 10em;
+}
+
+.card__bg__header {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+  color: var(--primary-white);
+  padding: 1em 0 0;
+}
+
+.card__bg__header__title {
+  line-height: 200%;
+  width: 10em;
+}
+
+.card__bg__header__time {
+  line-height: 200%;
+  font-size: 0.9em;
+  color: var(--tertiary-white);
+}
+
+.card__body {
+  padding: 2em 1em;
+  display: flex;
+}
+
+.card__body__profileImg {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5em;
+}
+
+.card__body__age {
+  color: var(--tph-orange);
+}
+
+.card__body__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card__bookmark__wrapper {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.card__bookmark {
+
+  width: 56px;
+  height: 54px;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+}
+
+
+@media only screen and (max-width: 575px) {
+  .card__bg__header__title {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  .card__bg__header__time {
+    font-size: 1rem;
+  }
+  .card:hover {
+    transform: unset;
+  }
+  .card__bg__header {
+    text-align: center;
+  }
+}

@@ -1,0 +1,117 @@
+.popular__lession__card {
+    width: 100%;
+    border: 1px solid #d3d3d3;
+    border-radius: 20px;
+    margin-right: 2em;
+    margin-bottom: 3em;
+    padding-bottom: 4em;
+}
+
+.lession__card__header {
+    width: 100%;
+    height: 203px;
+    padding: 0px;
+}
+
+.lession__card__image {
+    background-image: url(../../Images/minecraft.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.lession__card__content {
+    margin-top: 1.8em;
+    padding: 0em 1em 0em 1em;
+}
+
+.lession__card__content__title {
+    font-weight: bold;
+    font-size: 1.6em;
+    color: #4a4a4a;
+}
+
+.lession__card__content__paragraph {
+    font-size: 14px;
+    color: #000000;
+    opacity: 0.5;
+    margin-top: 1.3em;
+}
+
+.lession__card__content__paragraph p {
+    width: 100%;
+    word-break: break-all;
+}
+
+.popular__lession__card__button__wrapper {
+    position: relative;
+    padding-left: 1.2em;
+    top: 22px;
+}
+
+.popular__lession__card__button {
+    background-color: var(--tph-purple);
+    width: 112px;
+    height: 39px;
+    color: var(--primary-white);
+    text-decoration: none;
+    border: none;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 8px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.popular__lession__card__button:hover {
+    color: var(--primary-black);
+    background-color: var(--button-purple);
+    transition: all 1s;
+}
+
+.popular__lession__card__button:hover .angleRightWhite{
+    filter: brightness(0%);
+    -webkit-filter: brightness(0%);
+    -moz-filter: brightness(0%);
+    transition: all 1s;
+}
+
+.threedots {
+    position: absolute;
+    left: 90%;
+    top: 48%;
+}
+
+.total__played {
+    padding-top: 0.4em;
+    font-size: 0.9rem;
+    color: #b7b7b7;
+}
+
+.total__units {
+    position: absolute;
+    left: 33%;
+    width: 94px;
+    height: 41px;
+    background-color: var(--primary-black);
+    opacity: 0.44;
+    color: var(--primary-white);
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.total__units__badge {
+    padding-right: 0.5em;
+}
+
+/*icons*/
+.angleRightWhite {
+    position:  relative;
+    left: 15px;
+}

@@ -1,0 +1,71 @@
+/** Checkbox **/
+/* Customize the label (the container) */
+.remember-me {
+  font-size: 0.95em !important;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  padding-top: 0;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.remember-me .text-size-small {
+  font-size: 0.95em !important;
+}
+/* Hide the browser's default checkbox */
+.remember-me a {
+  color: var(--tph-orange);
+}
+
+.remember-me input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  border-radius: 0.2em;
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.remember-me input:checked ~ .checkmark {
+  background-color: #57475b;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.remember-me input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.remember-me .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/** End of Checkbox **/

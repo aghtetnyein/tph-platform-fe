@@ -1,0 +1,336 @@
+.parentPage__info__card {
+	background: rgba(255, 255, 255, 0.69) !important;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px !important;
+	padding: 5em 4em 1em;
+}
+
+.parentPage__card__body {
+	font-size: 1.28rem;
+}
+
+.parentPage__card__text {
+	font-size: 1.28rem;
+	font-weight: 500;
+	line-height: 2rem;
+	color: var(--tph-purple);
+	width: 100%;
+	margin-bottom: 2.5em;
+}
+
+.parentPage__info__card__button {
+	width: 179px;
+	height: 50px;
+	background-color: var(--info-button);
+	border-radius: 30px;
+    border: none;
+}
+
+/*icons*/
+.parentPage__icons__wrapper {
+	position: absolute;
+	z-index: 1;
+	left: 4%;
+	top: -15%;
+	width: 100%;
+}
+
+.parentPage__icons__wrapper > * {
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 72px;
+    height: 72px;
+    margin-right: 4em;
+}
+
+.video__play__icon__wrapper {
+	position: relative;
+	top: 0.4em;
+}
+
+.brain__icon__wrapper {
+	position: relative;
+	top: 0.3em;
+}
+
+/*@media only screen and (max-width: 1366px) {
+icons
+	.parentPage__icons__wrapper {
+		left: 2.6%;
+	}
+}
+*/
+
+@media only screen and (max-width: 1280px) {
+	/*icons*/
+/*	.parentPage__icons__wrapper {
+		left: 3.2%;
+	}*/
+
+	.parentPage__icons__wrapper > * {
+    	margin-right: 3em;		
+	}
+}
+
+/*@media only screen and (max-width: 1200px) {
+icons
+	.parentPage__icons__wrapper {
+		left: 1.8%;
+	}
+}*/
+
+@media only screen and (max-width: 1143px) {
+	.parentPage__icons__wrapper > * {
+    	margin-right: 2.8em;		
+	}
+}
+
+@media only screen and (max-width: 1115px) {
+	.parentPage__icons__wrapper > * {
+    	margin-right: 2.4em;		
+	}
+}
+
+@media only screen and (max-width: 1059px) {
+	.parentPage__icons__wrapper > * {
+    	margin-right: 2em;		
+	}
+}
+
+
+@media only screen and (max-width: 1024px) {
+	.parentPage__info__card {
+		padding-top: 3em;
+	}
+	.parentPage__card__text {
+		font-size: 1.2rem;
+		margin-bottom: 2em;
+	}
+/*icons*/
+	.parentPage__icons__wrapper {
+		/*left: 2%;*/
+		top: -10%;	
+	}
+
+	.parentPage__icons__wrapper > * {
+		width: 58px;
+    	height: 58px;
+    	top: 0;
+    	margin-right: 2.8em;
+	}
+
+	.speaker__icon__wrapper img, 
+	.video__play__icon__wrapper img,
+	.tool__icon__wrapper img, 
+	.brain__icon__wrapper img,
+	.idea__bulb__icon__wrapper img {
+		width: 40%;
+        height: 40%;        
+	}
+}
+
+@media only screen and (max-width: 991px) {
+/*icons*/
+	/*.parentPage__icons__wrapper {
+		left: 2.6%;
+	}*/
+
+	.parentPage__icons__wrapper > * {
+		width: 55px;
+    	height: 55px;
+    	margin-right: 2.6em;
+	}
+}
+
+@media only screen and (max-width: 870px) {
+/*icons*/
+	/*.parentPage__icons__wrapper {
+		left: 2.3%;
+	}*/
+
+	.parentPage__icons__wrapper > * {
+		width: 50px;
+    	height: 50px;
+    	margin-right: 2em;
+	}
+
+/*info*/
+	.parentPage__card__text {
+		font-size: 1.1rem;
+		margin-bottom: 1.5em;
+	}
+
+	.parentPage__card__body {
+		font-size: 1.1rem;
+	}
+
+	.parentPage__info__card__button {
+		width: 169px;
+		height: 50px;
+	}
+
+	.parentPage__card__body {
+		padding: 0 0 1em !important;
+	}
+
+}
+
+@media only screen and (max-width: 768px) {
+/*icons*/
+
+	/*.parentPage__icons__wrapper {
+		left: 5.7%;
+	}*/
+	.parentPage__icons__wrapper > * {
+		width: 42px;
+    	height: 42px;
+    	/*margin-right: 1.2em;*/
+	}
+/*info*/
+	.parentPage__info__card {
+		padding: 1.5em;
+	}
+	.parentPage__card__body {
+		font-size: 1.1rem;
+	}
+	.parentPage__card__text {
+		font-size: 1rem;
+		margin-bottom: 1.5em;
+	}
+}
+
+@media only screen and (max-width: 703px) {
+	.parentPage__icons__wrapper > * {
+		margin-right: 1.4em;
+	}
+}
+
+@media only screen and (max-width: 619px) {
+	.parentPage__icons__wrapper > * {
+		margin-right: 1.3em;
+	}
+}
+
+@media only screen and (max-width: 605px) {
+	.parentPage__icons__wrapper > * {
+		margin-right: 1.2em;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+/*info*/
+	.parentPage__card__body {
+		font-size: 0.7rem;
+	}
+	.parentPage__info__card {
+		padding: 1.5em;
+		padding-bottom: 1.2em;
+	}
+	.parentPage__card__text {
+		font-size: 0.7rem;
+		margin-bottom: 1.5em;
+	}
+	.parentPage__info__card__button {
+		width: 119px;
+		height: 40px;
+	}
+/*icons*/
+	/*.parentPage__icons__wrapper {
+		left: 3%;
+	}*/
+
+	.parentPage__icons__wrapper > * {
+		width: 35px;
+    	height: 35px;
+    	margin-right: 1.2em;
+	}
+}
+
+@media only screen and (max-width: 521px) {
+	.parentPage__icons__wrapper > * {
+		margin-right: 1.1em;
+	}
+}
+
+@media only screen and (max-width: 457px) {
+	.parentPage__icons__wrapper > * {
+		margin-right: 0.7em;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.parentPage__info__card {
+		width: 80% !important;
+	}
+	/*icons*/
+	.parentPage__icons__wrapper > * {
+    	margin-right: 1.8em;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+
+/*icons*/
+	.parentPage__icons__wrapper {
+		left: 4.9%;
+	}
+
+	.parentPage__icons__wrapper > * {
+		width: 30px;
+    	height: 30px;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+		/*icons*/
+	/*.parentPage__icons__wrapper > * {
+    	margin-right: 1.2em;
+	}*/
+}
+
+@media only screen and (max-width: 335px) {
+
+/*icons*/
+	.parentPage__icons__wrapper {
+		left: 4%;
+		top: -7%;
+	}
+
+	.parentPage__icons__wrapper > * {
+		width: 28px;
+    	height: 28px;
+    	margin-right: 1.5em;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	/*icons*/
+	.parentPage__icons__wrapper {
+		top: -8%;
+		/*left: 4%;*/
+	}
+
+	.parentPage__icons__wrapper > * {
+		width: 28px;
+    	height: 28px;
+	}
+}
+
+@media only screen and (max-width: 292px) {
+/*icons*/
+	.parentPage__icons__wrapper {
+		top: -8%;
+		left: 3.5%;
+	}
+
+	.parentPage__icons__wrapper > * {
+		width: 28px;
+    	height: 28px;
+    	margin-right: 1.2em;
+	}
+
+}

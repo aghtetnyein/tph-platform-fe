@@ -1,0 +1,377 @@
+.pageParent {
+  padding: var(--nav-size) 0 0;
+}
+
+.pageParent__firstDiv {
+  background-image: url("../Images/zat-sin-with-sine-wine.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pageParent__firstDiv__blackOpacity {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 4em 0;
+}
+
+.pageParent__firstDiv__blackOpacity__content {
+  width: 70%;
+}
+
+.pageParent__firstDiv__blackOpacity__content__title__quote {
+  width: 1.5em;
+}
+
+.pageParent__firstDiv__blackOpacity__content__title__text {
+  font-size: 2.5em;
+  padding: 1.5em 0 0.5em;
+  color: var(--tph-gold);
+  font-weight: 500;
+}
+
+.pageParent__firstDiv__blackOpacity__content__body {
+  margin-top: 3em;
+  color: var(--primary-white);
+  line-height: 200%;
+}
+
+.pageParent__firstDiv__blackOpacity__content__button {
+  padding: 3em 0;
+}
+
+.pageParent__firstDiv__blackOpacity__owlImg {
+  width: 100%;
+}
+
+.pageParent__secondDiv {
+  padding: 7em 0;
+}
+
+.pageParent__secondDiv__title,
+.pageParent__thirdDiv__title,
+.pageParent__fourthDiv__title {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.pageParent__secondDiv__line,
+.pageParent__thirdDiv__line,
+.pageParent__fourthDiv__line {
+  background-color: var(--tph-gold);
+  margin-top: 1.2em;
+  height: 0.3em;
+  width: 5em;
+}
+
+.pageParent__secondDiv__subTitle,
+.pageParent__thirdDiv__subTitle,
+.pageParent__fourthDiv__subTitle {
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+.pageParent__secondDiv__card {
+  display: flex;
+  align-items: center;
+  padding: 2em 3em;
+  background-color: var(--secondary-white);
+  width: 95%;
+  border-radius: var(--border-radius);
+}
+
+.pageParent__secondDiv__card__img {
+  width: 8em;
+  margin-right: 3em;
+}
+
+.pageParent__secondDiv__card__title {
+  font-size: 1.2em;
+}
+
+.pageParent__secondDiv__card__subTitle {
+  padding: 2em 0;
+  font-size: 1em;
+  line-height: 200%;
+  color: var(--secondary-grey);
+}
+
+.pageParent__thirdDiv,
+.pageParent__fourthDiv {
+  padding: 5em 2em;
+}
+
+.pageParent__thirdDiv__description,
+.pageParent__fourthDiv__description {
+  font-size: 1em;
+  margin-top: 4em;
+  width: 70%;
+  line-height: 200%;
+}
+
+.pageParent__thirdDiv__cardsParent {
+  margin-top: 7em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+}
+
+.pageParent__thirdDiv__cardsParent__card {
+  margin-top: 7em;
+  background-color: var(--primary-white);
+  padding: 3em 1.5em;
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.pageParent__thirdDiv__cardsParent__card__img {
+  position: absolute;
+  width: 70%;
+  top: -20%;
+  left: 14%;
+}
+
+.pageParent__thirdDiv__cardsParent__card__title {
+  margin-top: 5em;
+}
+
+.pageParent__thirdDiv__cardsParent__card__description {
+  margin: 2em 0;
+  color: var(--secondary-grey);
+}
+
+.pageParent__fourthDiv__tabs {
+  margin-top: 4em;
+  padding: 0;
+  border-bottom: 1px solid var(--tertiary-grey);
+}
+
+.pageParent__fourthDiv__tabs__item {
+  padding: 2em 2.5em;
+  cursor: pointer;
+}
+
+.active__item {
+  border-bottom: 2px solid var(--secondary-grey);
+}
+
+.pageParent__fourthDiv__cardsParent {
+  margin-top: 4em;
+  padding: 0 5em;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(4, 1fr);
+  border: none;
+}
+
+.pageParent__fourthDiv__seeMore {
+  margin-top: 3em;
+  padding: 0 5em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pageParent__footer {
+  padding: 5em 0;
+}
+
+.pageParent__footer__info__title,
+.pageParent__footer__contact__title {
+  font-size: 1.2em;
+  color: var(--primary-white);
+}
+
+.pageParent__footer__info__dataParent,
+.pageParent__footer__contact__socialIcons {
+  margin-top: 3em;
+  color: var(--primary-white);
+}
+
+.pageParent__footer__info__dataParent__data {
+  display: flex;
+  width: 90%;
+  line-height: 200%;
+  padding: 0.5em 0;
+}
+
+.pageParent__footer__info__dataParent__data__icon {
+  font-size: 1.2em;
+  margin-right: 2em;
+}
+
+.pageParent__footer__contact__socialIcons {
+  display: flex;
+}
+
+.pageParent__footer__contact__socialIcons__iconParent {
+  cursor: pointer;
+  width: 4em;
+  height: 4em;
+  background-color: transparent;
+  border: 1px solid var(--primary-grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1em;
+}
+
+.pageParent__footer__contact__socialIcons__iconParent__iconSelf {
+  font-size: 2em;
+}
+
+.pageParent__footer__contact__socialIcons__iconParent:hover {
+  background-color: var(--primary-white);
+  color: var(--tph-purple);
+}
+
+@media (max-width: 1024px) {
+  .pageParent__thirdDiv__cardsParent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 3em;
+  }
+
+  .pageParent__thirdDiv__cardsParent__card {
+    margin-top: 7em;
+    padding: 2em 3em;
+  }
+
+  .pageParent__thirdDiv__cardsParent__card__img {
+    top: -30%;
+    left: 17%;
+  }
+
+  .pageParent__thirdDiv__cardsParent__card__title {
+    margin-top: 8em;
+  }
+
+  .pageParent__fourthDiv__cardsParent {
+    padding: 0 7em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pageParent__fourthDiv__seeMore {
+    padding: 0 7em;
+  }
+}
+
+@media (max-width: 870px) {
+  .pageParent__firstDiv__blackOpacity {
+    padding: 0 5em;
+  }
+
+  .pageParent__firstDiv__blackOpacity__content {
+    width: 80%;
+  }
+
+  .pageParent__firstDiv__blackOpacity__content__title__text {
+    font-size: 2em;
+    padding: 3em 0 0;
+  }
+
+  .pageParent__firstDiv__blackOpacity__owlImg {
+    width: 100%;
+  }
+
+  .pageParent__secondDiv,
+  .pageParent__thirdDiv,
+  .pageParent__fourthDiv {
+    padding: 5em;
+  }
+
+  .pageParent__secondDiv__card {
+    margin-top: 2em;
+    width: 100%;
+  }
+
+  .pageParent__thirdDiv__description {
+    width: 100%;
+  }
+
+  .pageParent__thirdDiv__cardsParent__card__img {
+    top: -20%;
+    left: 17%;
+  }
+
+  .pageParent__fourthDiv__cardsParent {
+    padding: 0 2em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pageParent__fourthDiv__seeMore {
+    padding: 0 2em;
+  }
+
+  .pageParent__footer {
+    padding: 5em;
+  }
+}
+
+@media (max-width: 576px) {
+  .pageParent__firstDiv__blackOpacity {
+    padding: 2em 4em 0;
+  }
+
+  .pageParent__firstDiv__blackOpacity__content {
+    width: 100%;
+  }
+
+  .pageParent__secondDiv,
+  .pageParent__thirdDiv {
+    padding: 0 2em;
+  }
+
+  .pageParent__secondDiv {
+    margin: 3em 0;
+  }
+
+  .pageParent__secondDiv__title,
+  .pageParent__thirdDiv__title {
+    font-size: 1.2em;
+  }
+
+  .pageParent__secondDiv__card {
+    display: flex;
+    align-items: flex-start;
+    padding: 2em;
+    background-color: var(--secondary-white);
+    width: 100%;
+    border-radius: var(--border-radius);
+  }
+
+  .pageParent__secondDiv__card__img {
+    width: 4em;
+    margin-right: 2em;
+  }
+
+  .pageParent__thirdDiv {
+    padding: 2em;
+  }
+
+  .pageParent__thirdDiv__cardsParent {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .pageParent__fourthDiv {
+    padding: 5em 2em;
+  }
+
+  .pageParent__fourthDiv__cardsParent {
+    padding: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .pageParent__fourthDiv__seeMore {
+    padding: 0;
+  }
+
+  .pageParent__footer {
+    padding: 5em 2.5em;
+  }
+
+  .pageParent__footer__info__dataParent__data {
+    width: 100%;
+  }
+
+  .pageParent__footer__contact__title {
+    margin-top: 3em;
+  }
+}

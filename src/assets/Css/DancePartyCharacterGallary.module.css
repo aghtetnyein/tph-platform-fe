@@ -1,0 +1,146 @@
+.parent {
+  margin-top: var(--nav-size);
+  padding: 4em 0 0;
+}
+
+.parent__title {
+  width: 25em;
+}
+
+.parent__div,
+.parent__fifthDiv,
+.parent__sixthDiv {
+  padding: 4em 0;
+}
+
+.parent__div__title,
+.parent__fifthDiv__title {
+  font-size: 1.3em;
+  padding: 0 1.5em;
+  line-height: 200%;
+  border-left: 2px solid var(--tph-gold);
+}
+
+.parent__div__content,
+.parent__fifthDiv__content {
+  margin-top: 2em;
+  line-height: 200%;
+}
+
+.parent__div__image {
+  margin-top: 4em;
+  width: 100%;
+}
+
+.parent__quote {
+  margin: 3em 0;
+  display: flex;
+}
+
+.parent__quote__img {
+  width: 2em;
+  height: 2em;
+}
+
+.parent__quote__content {
+  font-size: 1.3em;
+  margin: 0 2em;
+  padding-top: 2em;
+  line-height: 200%;
+}
+
+.parent__fourthDiv__images {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3em;
+}
+
+.parent__fourthDiv__images__image {
+  width: 20em;
+}
+
+.parent__fifthDiv__content {
+  margin-top: 4em;
+  display: flex;
+}
+
+.parent__fifthDiv__content__text {
+  margin-left: 3em;
+  line-height: 200%;
+}
+
+.parent__sixthDiv__title {
+  width: 12em;
+  margin: auto;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 1em 0;
+  border-bottom: 1px solid var(--tph-gold);
+}
+
+.parent__sixthDiv__articlesParent {
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parent__sixthDiv__articlesParent__article {
+  background-color: var(--tertiary-white);
+  border: 1px solid var(--primary-gray);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1em;
+}
+
+.parent__sixthDiv__articlesParent__article__title {
+  padding: 0 2em;
+}
+
+.parent__sixthDiv__articlesParent__article__img {
+  width: 5em;
+  height: 5em;
+  border-radius: 0 5px 5px 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .parent__fourthDiv__images {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .parent__fourthDiv__images {
+    display: block;
+  }
+
+  .parent__fourthDiv__images__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .parent__fifthDiv__content {
+    display: block;
+  }
+
+  .parent__fifthDiv__content__text {
+    margin-left: 0;
+    margin-top: 2em;
+  }
+
+  .parent__sixthDiv__articlesParent {
+    display: block;
+  }
+
+  .parent__sixthDiv__articlesParent__article {
+    width: 70%;
+    margin: 1em auto;
+  }
+}

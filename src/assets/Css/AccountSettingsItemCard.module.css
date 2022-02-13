@@ -1,0 +1,47 @@
+.itemCard {
+  padding: 1em;
+  border-radius: 24px;
+  background-color: var(--secondary-white);
+  position: relative;
+}
+
+.itemCard:hover {
+  filter: contrast(90%);
+}
+
+.itemCard__iconParent {
+  position: absolute;
+  text-align: center;
+  top: -1.5em;
+  left: 1.5em;
+  background-color: var(--tph-purple);
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 3.5em;
+}
+
+.itemCard__iconParent__icon {
+  color: var(--primary-white);
+  font-size: 1.1em;
+  line-height: 3.5em;
+}
+
+.itemCard__title {
+  padding: 0 2em;
+  margin: 2em 0;
+}
+
+.itemCard__description {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-white);
+  margin: 0.5em;
+  padding: 1.5em 2em;
+  border-radius: 40px;
+}
+
+.itemCard__description h4 {
+  font-size: 0.9em !important;
+  line-height: 200%;
+  padding-right: 1em;
+}

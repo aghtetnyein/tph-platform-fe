@@ -1,0 +1,82 @@
+.navBar {
+  margin: 0;
+  margin-top: var(--nav-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-icon-background);
+  color: white;
+  padding: 1em;
+  width: 100%;
+}
+
+.blocklyWorkspace__Nav__activity,
+.blocklyWorkspace__Nav__assessment {
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.3em;
+}
+
+.inProgress {
+  border: 1px solid #fff !important;
+  color: #fff !important;
+  background-color: transparent !important;
+}
+
+.unsuccessful {
+  border: 1px solid var(--tph-gold) !important;
+  color: var(--tph-gold) !important;
+  background-color: transparent !important;
+}
+
+.successful {
+  background-color: #fff !important;
+  color: var(--tph-purple) !important;
+  border: none !important;
+}
+
+.notStarted {
+  background-color: var(--tph-purple) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.active:focus {
+  color: #fff !important;
+  background-color: var(--tph-orange) !important;
+}
+
+.initial__active {
+  color: #fff !important;
+  background-color: var(--tph-orange) !important;
+}
+
+.blocklyWorkspace__Nav__concept {
+  cursor: pointer;
+  width: 1.6rem;
+  height: 1.6rem;
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5em;
+  border: 1px solid var(--tph-purple);
+  color: var(--tph-purple);
+}
+
+.themeWhite {
+  color: var(--primary-white);
+}
+
+.concept__square__text {
+  transform: rotate(-45deg);
+}
+
+.blocklyWorkspace__Nav__activity:hover {
+  text-decoration: inherit;
+}

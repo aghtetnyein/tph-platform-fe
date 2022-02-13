@@ -1,0 +1,63 @@
+.modalBackground {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  z-index: 99;
+  color: var(--primary-black);
+}
+
+.parent {
+  margin: auto;
+  margin-top: 15em;
+  width: 40%;
+  background-color: var(--secondary-white);
+  padding: 3em;
+  border-radius: 1.5em;
+}
+
+.parent__title {
+  border-bottom: 1px solid var(--tertiary-grey);
+  padding-bottom: 2em;
+  display: flex;
+  align-items: center;
+}
+
+.parent__title__iconParent {
+  background-color: var(--tph-gold);
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+  margin-right: 1em;
+  text-align: center;
+}
+
+.parent__title__iconParent__iconSelf {
+  color: var(--primary-white);
+  line-height: 3em;
+}
+
+.parent__description {
+  padding: 2em 0;
+  line-height: 200%;
+  border-bottom: 1px solid var(--tertiary-grey);
+}
+
+.parent__actionButtons {
+  margin-top: 2em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (width: 1024px) {
+  .parent {
+    width: 60%;
+  }
+}
+
+@media (max-width: 870px) {
+  .parent {
+    width: 90%;
+  }
+}

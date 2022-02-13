@@ -13,6 +13,7 @@ import ChangePassword from "../pages/Student/ChangePassword";
 import ChangeAccountTypeSettings from "../pages/Student/ChangeAccountTypeSettings";
 import StudentLessons from "../pages/Student/StudentLessons";
 import StudentProjects from "../pages/Student/StudentProjects";
+import DancePartyWorkspace from "../components/DancePartyWorkspace";
 
 const Student = () => {
   return useRoutes([
@@ -45,6 +46,10 @@ const Student = () => {
     {
       path: "/404",
       element: <PageNotFound />,
+    },
+    {
+      path: "/danceparty",
+      element: <DancePartyWorkspace/>,
     },
     { path: "*", element: <Navigate to="/404" replace /> },
   ]);

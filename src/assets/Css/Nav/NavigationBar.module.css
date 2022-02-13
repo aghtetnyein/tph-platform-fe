@@ -1,0 +1,159 @@
+/* Bootstrap CSS */
+.nav {
+  display: block;
+}
+
+.nav-item a {
+  color: var(--tertiary-white);
+}
+
+.nav-link {
+  padding: 0;
+  font-size: 1em;
+  padding: 2em 1em;
+  color: var(--tertiary-white);
+  cursor: pointer;
+}
+
+/** Custom Css **/
+.navigationBar {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  height: var(--nav-size);
+  background-color: var(--tph-purple);
+  border-bottom: 1px solid var(--tertiary-white);
+  padding: 0 4em;
+}
+
+.brandLogo {
+  width: 6em;
+}
+
+.navLinks {
+  margin-right: 3em;
+}
+
+.navLinks__NavItem {
+  font-size: 1em;
+  padding: 0em 1em;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.active > .navLinks__NavItem,
+.navLinks__NavItem:hover {
+  color: var(--primary-white);
+}
+
+.profile {
+  padding: 0.5em 1em 0.5em 0.5em;
+  border-radius: 2em;
+  cursor: pointer;
+}
+
+.profile:hover {
+  background-color: var(--primary-icon-background);
+}
+
+.profileImage {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profileName {
+  color: var(--primary-white);
+}
+
+.more {
+  margin-left: 1em;
+  background-color: var(--primary-icon-background);
+  cursor: pointer;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  display: flex;
+}
+
+.more:hover {
+  background-color: var(--primary-icon-background);
+}
+
+.moreIcon {
+  color: var(--tertiary-white);
+  font-size: 1.5em;
+  margin: auto;
+}
+
+@media (max-width: 870px) {
+  .navigationBar {
+    padding: 1em 1em 1em 2em;
+  }
+
+  .navButton,
+  .navIconParent {
+    cursor: pointer;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    display: flex;
+    background-color: var(--primary-icon-background);
+  }
+
+  .navIconParent__icon {
+    color: var(--tertiary-white);
+    font-size: 1.2em;
+    margin: auto;
+  }
+
+  .navLinksMobile,
+  .navLinksMobileActive {
+    position: absolute;
+    background-color: var(--tph-purple);
+    padding-top: 1em;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+  }
+
+  .navLinksMobile {
+    left: 100vw;
+    transition: left var(--animation-speed) ease;
+  }
+
+  .navLinksMobileActive {
+    left: 0;
+    transition: left var(--animation-speed) ease;
+  }
+
+  .navItems {
+    margin-top: 1em;
+    border-top: 1px solid #eee;
+    padding: 0.5em;
+  }
+
+  .navigationBar .navLinks__NavItem {
+    padding-left: 1em;
+    font-size: 0.9em;
+    border-radius: var(--border-radius);
+  }
+}
+
+@media (max-width: 576px) {
+  .active {
+    background-color: var(--primary-icon-background);
+    border-radius: var(--border-radius);
+  }
+
+  .active .navIconParent {
+    background-color: var(--tph-purple);
+  }
+
+  .navigationBar .navLinks__NavItem {
+    padding: 1em 2em;
+    font-size: 0.9em;
+  }
+}

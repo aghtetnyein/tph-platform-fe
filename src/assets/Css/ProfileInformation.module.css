@@ -1,0 +1,106 @@
+/* Right Content Start */
+.rightCard {
+  background-color: var(--primary-white);
+  padding: 1em 3em;
+  margin: 0 1.5em 0 0;
+  border-radius: 3em;
+}
+
+.rightCard__title {
+  padding: 1.5em 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: var(--secondary-grey);
+}
+
+.rightCard__editFields {
+  padding: 3em 0;
+  border-top: 1px solid var(--tertiary-grey);
+  border-bottom: 1px solid var(--tertiary-grey);
+}
+
+.rightCard__editFields__profileImage {
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rightCard__editFields__content {
+  margin-left: 2em;
+  padding-top: 0.5em;
+}
+
+.rightCard__editFields__content__name {
+  font-size: 1.3em;
+}
+
+.rightCard__editFields__content__imageEditLinks {
+  padding: 1em 0;
+  cursor: pointer;
+}
+
+.rightCard__editFields__content__imageEditLinks__uploadImage {
+  color: var(--tph-cyan);
+  margin-right: 1em;
+  font-size: 0.9em;
+}
+
+.rightCard__editFields__content__imageEditLinks__removeImage {
+  color: var(--tph-orange);
+  font-size: 0.9em;
+}
+
+.rightCard__editFields__editForm {
+  margin: 3em 1.5em;
+}
+
+.rightCard__editFields__editForm__inputField {
+  margin: 2em 0 1em;
+  width: 90%;
+}
+
+.rightCard__editFields__editForm__changeLink {
+  cursor: pointer;
+  padding: 1em 1.5em 0;
+  font-size: 0.9em;
+  color: var(--tph-orange);
+}
+
+.rightCard__actionButtons {
+  margin: 2em 0;
+}
+
+@media (max-width: 1024px) {
+  .rightContentParentDiv {
+    padding-left: 1em;
+  }
+
+  .rightCard__profileImage {
+    width: 7em;
+    height: 7em;
+    border-radius: 7em;
+  }
+
+  .rightCard__editFields__editForm__inputField {
+    margin: 2em 0 1em;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .rightContentParentDiv {
+    padding-left: 0em;
+  }
+
+  .rightCard {
+    background-color: var(--primary-white);
+    padding: 0 1em;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .rightCard__editFields__editForm {
+    margin: 0;
+  }
+}

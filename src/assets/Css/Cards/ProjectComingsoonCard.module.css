@@ -1,0 +1,65 @@
+.popular__project__comingsoon__card {
+	width: 100%;
+	height: 100%;
+    border: 1px solid var(--tertiary-white);
+    border-radius: 20px;
+    background: linear-gradient(94.22deg, #ffffff 0.32%,
+     rgba(255, 255, 255, 0.912836) 10.7%,
+     rgba(255, 255, 255, 0.886543) 19.01%,
+     rgba(236, 236, 236, 0.848746) 30.95%,
+     rgba(228, 228, 228, 0.801298) 44.06%,
+     rgba(220, 220, 220, 0.763588) 52.48%,
+     rgba(196, 196, 196, 0.736994) 66.1%,
+     rgba(182, 182, 182, 0.7) 80.8%
+ 	);
+ 	display: flex;
+}
+
+.comingsoon__owl__sm {
+	width: 80%;
+	height: 80%;
+	margin-left: 1em;
+}
+
+.lock__svg__wrapper {
+	position: absolute;
+	left: 55%;
+	top: 20%;
+	height: 100%;
+} 
+
+.lock__svg__wrapper p{
+	position: relative;
+	left: -30%;
+	top: 10%;
+	width: 120%;
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: rgba(87, 87, 87, 0.8);
+}
+
+@media only screen and (max-width: 1280px) {
+	.comingsoon__owl__sm {
+		margin-left: 0.5em;
+	}
+}
+
+@media only screen and (max-width: 870px) {
+	.popular__project__comingsoon__card {
+		display: block;
+	}
+
+	.popular__project__comingsoon__card__left {
+		display: none;
+	}
+
+	.lock__svg__wrapper {
+		left: 40%;
+	} 
+}
+
+/*@media only screen and (max-width: 768px) {
+	.lock__svg__wrapper {
+		left: 45%;
+	} 
+}*/

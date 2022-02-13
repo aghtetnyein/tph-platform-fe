@@ -1,0 +1,116 @@
+.popular__lession__comingsoon__card {
+	width: 100%;
+    height: 100%;
+    background: linear-gradient(181.13deg,
+     rgba(196, 196, 196, 0) 4.41%,
+     rgba(196, 196, 196, 0.65625) 42.66%, #c4c4c4 97.17%
+ 	);
+    border: 1px solid #d3d3d3;
+    border-radius: 20px;
+    margin-right: 2em;
+    padding-bottom: 3em;
+}
+
+.comingsoon__owl__lg__wrapper {
+    z-index: 1;
+    position: relative;
+    left: 2%;
+}
+
+.popular__lession__comingsoon__inner__card {
+    width: 80%;
+    height: 50%;
+    background-color: #fbfbfb;
+    position: relative;
+    top: -5%;
+    left: 10%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.lock__svg__wrapper {
+    position: absolute;
+    left: 40%;
+    top: 24%;
+    height: 100%;
+} 
+
+.lock__svg__wrapper p{
+    position: relative;
+    left: -30%;
+    top: 10%;
+    width: 120%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: rgba(87, 87, 87, 0.8);
+}
+/*
+@media only screen and (max-width: 1440px) {
+    .comingsoon__owl__lg__wrapper {
+        left: 5%;
+    }
+}*/
+
+@media only screen and (max-width: 1280px) {
+    .comingsoon__owl__lg__wrapper {
+        left: 3%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .comingsoon__owl__lg__wrapper {
+        left: 8%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .comingsoon__owl__lg__wrapper {
+        left: 8%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .comingsoon__owl__lg__wrapper {
+        left: 1%;
+    }
+
+    .comingsoon__owl__lg__wrapper img {
+        width: 100%;
+    }
+
+    .comingsoon__owl__lg__wrapper {
+        width: 80%;
+    }
+
+    .lock__svg__wrapper {
+        left: 36%;
+    }
+}
+
+@media only screen and (max-width: 870px) {
+    .comingsoon__owl__lg__wrapper {
+        left: 1%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .comingsoon__owl__lg__wrapper {
+        display: none;
+    }
+
+    .popular__lession__comingsoon__inner__card {
+        position: absolute;
+        top: 22%;
+    }
+
+    .lock__svg__wrapper {
+        left: 43%;
+        top: 28%;
+    } 
+}
+
+@media only screen and (max-width: 320px) {
+    .lock__svg__wrapper {
+        left: 40%;    }
+}

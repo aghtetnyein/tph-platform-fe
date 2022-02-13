@@ -1,0 +1,98 @@
+.menuRadioItem {
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.iconButton {  
+  --button-size: calc(var(--nav-size) * 0.6);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: var(--primary-icon-background);
+  color: var(--white);
+  border-radius: 50%;
+  padding: 15px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter var(--animation-speed);
+  margin-right: 0.5rem;
+
+}
+.iconButton:hover {
+  filter: brightness(1.2);
+  filter: none;
+}
+.iconButton svg {
+  fill: var(--text-color);
+  width: 20px;
+  height: 20px;
+}
+
+
+@media (width: 1024px) {
+  .iconButton {
+    --button-size: calc(var(--nav-size) * 0.4);
+  }
+}
+
+@media (max-width: 870px) {
+  .iconButton {
+    --button-size: calc(var(--nav-size) * 0.5);
+  }
+}
+
+.radioItems {
+  padding: 0.5em 1em;
+  margin-left: 2em;
+}
+
+
+.radioItems__item .radioItems__item__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radioItems__item .radioItems__item__radioCheckmark {
+  border: 1px solid var(--tertiary-white);
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+}
+
+.radioItems__item {
+  width: 100%;
+  padding: 1em;
+  margin: 0;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.radioItems__item:hover {
+  background-color: var(--primary-icon-background);
+}
+
+.radioItems__item__input:checked ~ .radioItems__item__radioCheckmark {
+  border: 1px solid var(--tph-gold);
+}
+
+.radioItems__item__radioCheckmark:after {
+  content: "";
+  display: none;
+}
+
+.radioItems__item__input:checked ~ .radioItems__item__radioCheckmark:after {
+  display: block;
+}
+
+.radioItems__item__radioCheckmark:after {
+  margin-top: 0.2em;
+  margin-left: 0.2em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--tph-gold);
+}

@@ -1,0 +1,132 @@
+/* Right Content Start */
+.rightCard {
+  background-color: var(--primary-white);
+  padding: 1em 3em;
+  margin: 0 1.5em 0 0;
+  border-radius: 3em;
+}
+
+.rightCard__title {
+  padding: 1.5em 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: var(--secondary-grey);
+}
+
+.rightCard_subTitle {
+  color: var(--secondary-grey);
+  line-height: 200%;
+}
+
+.rightCard__editFields {
+  padding: 1em 0;
+  border-top: 1px solid var(--tertiary-grey);
+  border-bottom: 1px solid var(--tertiary-grey);
+}
+
+.rightCard__editFields__radioInput {
+  display: none;
+}
+
+.rightCard__editFields__radioInput:checked + label .student,
+.rightCard__editFields__card:hover .student {
+  background-color: var(--opacity-low-yellow);
+  /* box-shadow: 4px 4px 10px 2px #cacaca; */
+  border: 3px solid var(--tph-light-gold);
+  border-radius: var(--border-radius);
+}
+
+.rightCard__editFields__radioInput:checked + label .teacher,
+.rightCard__editFields__card:hover .teacher {
+  background-color: var(--opacity-low-purple);
+  /* background-color: #cfc2ce; */
+  /* box-shadow: 4px 4px 10px 2px #cacaca; */
+  border: 3px solid var(--tph-light-purple);
+  border-radius: var(--border-radius);
+}
+
+.rightCard__editFields__card {
+  cursor: pointer;
+  height: 100%;
+  width: 85%;
+  border-radius: 1.5em;
+  background-color: #f0f0f0;
+}
+
+.rightCard__editFields__card__imgParent {
+  text-align: center;
+  padding: 1em;
+}
+
+.rightCard__editFields__card__imgParent__imgSelf {
+  width: 12em;
+}
+
+.rightCard__editFields__card__info {
+  padding: 0 2.5em 1.5em;
+  border-radius: 0 0 12px 12px;
+}
+
+.rightCard__editFields__card__info__title {
+  color: var(--secondary-grey);
+  font-size: 1em !important;
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+
+.rightCard__editFields__card__info__description {
+  color: var(--secondary-grey);
+  font-size: 0.9em !important;
+  line-height: 200%;
+}
+
+.rightCard__actionButtons {
+  margin: 2em 0;
+}
+
+.rightCard__editFields__form {
+  margin: 3em 0;
+}
+
+.rightCard__editFields__form__student > p,
+.rightCard__editFields__form__teacher > p {
+  font-size: 0.9em !important;
+  color: var(--tph-orange);
+}
+
+.rightCard__editFields__form__teacher__input {
+  margin-top: 3em;
+  width: 85%;
+}
+
+@media (max-width: 1024px) {
+  .rightContentParentDiv {
+    padding-left: 1em;
+  }
+
+  .rightCard__editFields__editForm__inputField {
+    margin: 2em 0 1em;
+    width: 100%;
+  }
+}
+
+@media (max-width: 870px) {
+  .rightContentParentDiv {
+    padding-left: 0em;
+  }
+
+  .rightCard {
+    background-color: var(--primary-white);
+    padding: 0 1em;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .rightCard__editFields__editForm {
+    margin: 0;
+  }
+
+  .rightCard__editFields__card {
+    width: 100%;
+  }
+}

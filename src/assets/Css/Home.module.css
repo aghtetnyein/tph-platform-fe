@@ -1,0 +1,2216 @@
+.parentPage {
+    padding: var(--nav-size) 0 0;
+}
+
+.studentHome__hero__bg {
+    position: relative;
+    /*margin-left: 0 !important;
+    margin-right: 0 !important;*/
+    height: 48vw;
+    width: 100vw;
+}
+
+.wave__linear {
+    background-image: url("../Images/home_bg_pattern.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave__img {
+    /*margin-left: 2em;*/
+    background-image: url("../Images/another-home-bg.svg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    line-height: 0;
+    opacity: 0.5;
+
+}
+/*
+#imgPattern image {
+    position: relative !important;
+    left: 50px !important;
+}*/
+
+.studentHome__hero__title {
+    position: absolute;
+    z-index: 3;
+    top: 20%;
+    left: -2%;
+    color: var(--primary-white);
+    width: 100%;
+    height: 186px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.studentHome__hero__title h6 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 175%;
+}
+
+.studentHome__hero__title h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+.studentHome__hero__title p{
+    width: 500px;
+    height: 64px;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+}
+
+.button__wrapper {
+    position: absolute;
+    z-index: 4;
+    top: 65%;
+    left: 42%;
+    margin: 0 auto;
+}
+
+.button__wrapper__button {
+    background-color: var(--button-purple);
+    width: 150px;
+    height: 50px;
+    color: var(--primary-black);
+    text-decoration: none;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 8px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.card__wrapper {
+    height: 301px;
+    width: 493px;
+    padding: 10px;
+    position: relative;
+    top: -9.8em;
+    left: 2.4%;
+    z-index: 3;
+    border-radius: 20px;
+    backdrop-filter: blur(1px);
+    background-color: #f0f0f0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card__wrapper__card {
+    padding: 10px;
+    text-align: center;
+    display: flex;
+}
+
+.card__image__owlVector {
+    width: 48%;
+    height: 100%;
+    position: absolute;
+    top: -10px;
+    left: -5px;
+}
+
+.card__blockly {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 240px;
+    margin-top: 28px;
+}
+
+.card__wavy__bg {
+    position: absolute;
+}
+
+.home__content {
+    margin-top: -3em;
+}
+
+
+/*info cards*/
+
+.home__info__cards__wrapper {
+    color: var(--primary-white);
+    width: auto;
+}
+
+.project__info__card {
+    background: linear-gradient(117.7deg, #57475b 22.16%, #927699 79.04%);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 38px 40px 40px 40px !important;
+    margin-top: 0.7em;
+    display: flex;
+
+}
+
+.project__info__card__left__side h3 {
+    font-family: Myanmar Sagar;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.project__info__card__left__side p {
+    font-size: 1.06rem;
+    width: 100%;
+    margin-top: 2.2em;
+    padding-right: 1em;
+}
+
+.total__projects {
+    font-weight: 500;
+    margin-top: 2.5em;
+}
+
+.owl__coding__svg {
+    position: absolute;
+    left: 62%;
+    top: 15%;
+}
+
+.projects__button__wrapper {
+    position: relative;
+    top: 85%;
+}
+
+.projects__button {
+    background-color: var(--tph-purple);
+    width: 150px;
+    height: 50px;
+    color: var(--primary-white);
+    text-decoration: none;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 8px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+
+.projects__button:hover {
+    color: var(--primary-black);
+    background-color: var(--button-purple);
+    transition: all 1s;
+}
+
+
+.projects__button__wrapper:hover .angleRightWhite {
+    filter: brightness(0%);
+    -webkit-filter: brightness(0%);
+    -moz-filter: brightness(0%);
+    transition: all 1s;
+}
+
+/*for mobile version*/
+.projects__button__wrapper__mobile, .lessions__button__wrapper__mobile {
+    position: relative;
+    display: none;
+}
+
+.projects__button__mobile, .lessions__button__mobile {
+    background-color: var(--tph-purple);
+    width: 130px;
+    height: 50px;
+    color: var(--primary-white);
+    text-decoration: none;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 8px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+
+.projects__button__mobile:hover {
+    color: var(--primary-black);
+    background-color: var(--button-purple);
+    transition: all 1s;
+}
+
+
+.lessions__button__wrapper__mobile:hover .angleRightWhite {
+    filter: brightness(0%);
+    -webkit-filter: brightness(0%);
+    -moz-filter: brightness(0%);
+    transition: all 1s;
+}
+
+
+.lessions__button__mobile:hover {
+    color: var(--primary-black);
+    background-color: var(--button-purple);
+    transition: all 1s;
+}
+
+
+.projects__button__wrapper__mobile:hover .angleRightWhite {
+    filter: brightness(0%);
+    -webkit-filter: brightness(0%);
+    -moz-filter: brightness(0%);
+    transition: all 1s;
+}
+
+.lession__info__card {
+    background: linear-gradient(117.7deg, #57475b 22.16%, #927699 79.04%);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 38px 40px 40px 40px !important;
+    margin-left: 1em;
+    margin-top: 0.7em;
+}
+
+.lession__info__card__left__side h3 {
+    font-family: Myanmar Sagar;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.lession__info__card__left__side p {
+    font-size: 1.06rem;
+    width: 100%;
+    margin-top: 2.2em;
+    padding-right: 10.3em;
+}
+
+.total__lessions {
+    font-weight: 500;
+    margin-top: 2.5em;
+}
+
+.owl__reading__svg {
+    position: absolute;
+    left: 57%;
+    top: 13%;
+}
+
+.lessions__button__wrapper {
+    position: absolute;
+    top: 80%;
+    left: 68%;
+}
+
+.lessions__button{
+    background-color: var(--tph-purple);
+    width: 150px;
+    height: 50px;
+    color: var(--primary-white);
+    text-decoration: none;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 8px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+.lessions__button:hover {
+    color: var(--primary-black);
+    background-color: var(--button-purple);
+    transition: all 1s;
+}
+
+
+.lessions__button__wrapper:hover .angleRightWhite {
+    filter: brightness(0%);
+    -webkit-filter: brightness(0%);
+    -moz-filter: brightness(0%);
+    transition: all 1s;
+}
+
+/*popular projects*/
+.home__content__popular__projects__wrapper{
+    margin-top: 100px;
+}
+
+.home__content__popular__projects__cards__wrapper {
+    padding-left: 1em;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    width: 100%;
+}
+
+.home__content__popular__project__card {
+    width: 100%;
+    border: 1px solid var(--tertiary-white);
+    border-radius: 20px;
+}
+
+.home__content__popular__projects__cards__col {
+    margin-bottom: 2em;
+    margin-right: 1em;
+}
+
+.project__card__header {
+    display: flex;
+    padding: 13px 7px 4px 20px;
+    width: 100%;
+}
+
+.project__card__image {
+    background-image: url(../Images/minecraft.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+    height: 99px;
+    border-radius: 10px;
+    margin-right: 0.5em;
+}
+
+.project__card__content__title p {
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #4a4a4a;
+    margin-top: 1px;
+}
+
+.project__card__content__paragraph {
+    font-size: 14px;
+    color: #4f4f4f;
+    opacity: 0.9;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.project__card__content {
+    width: 127%;
+}
+
+.project__card__footer1, .project__card__footer2, .project__card__footer3 {
+    width: 100%;
+}
+
+.project__card__footer1 {
+    background: linear-gradient(270deg, rgba(220, 186, 219, 0.53) 0%, #ffffff 100%);
+    border: 1px solid #e3e3e3;
+    border-bottom-right-radius: 20px ;
+    border-bottom-left-radius: 20px ;
+
+}
+
+.project__card__footer2 {
+    background: linear-gradient(270deg, #c2f2eb 0%, #ffffff 100%);
+    border: 1px solid #e3e3e3;
+    border-bottom-right-radius: 20px ;
+    border-bottom-left-radius: 20px ;
+
+}
+
+.project__card__footer3 {
+    background: linear-gradient(270deg, #838383 0%, #ffffff 100%);
+    border: 1px solid #e3e3e3;
+    border-bottom-right-radius: 20px ;
+    border-bottom-left-radius: 20px ;
+
+}
+
+
+.popular__project__card__button__wrapper {
+    position: relative;
+    left: 52%;
+    top: -7px;
+    width: 40%;
+}
+
+.popular__project__card__button, .popular__project__card__button2, .popular__project__card__button3 {
+    background-color: var(--primary-white);
+    width: 100%;
+    height: 39px;
+    color: #4a4a4a;
+    text-decoration: none;
+    border: none;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 8px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+.popular__project__card__button:hover {
+    color: var(--primary-white);
+    background-color: var(--tph-purple);
+    transition: all 1s;
+}
+
+.popular__project__card__button:hover .angleRightBlack {
+    filter:  brightness(0) invert(1);
+    transition: all 1s;   
+}
+
+.popular__project__card__button2:hover {
+    color: var(--primary-white);
+    background-color: #7ecdc7;
+    transition: all 1s;
+}
+
+.popular__project__card__button2:hover .angleRightBlack {
+    filter:  brightness(0) invert(1);
+    transition: all 1s;   
+}
+
+.popular__project__card__button3:hover {
+    color: var(--primary-white);
+    background-color: #000000;
+    opacity: 0.6;
+    transition: all 1s;
+}
+
+.popular__project__card__button3:hover .angleRightBlack {
+    filter:  brightness(0) invert(1);
+    transition: all 1s;   
+}
+
+.popular__project__card__total {
+    position: relative;
+    top: 20px;
+    left: 7%;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    opacity: 0.6;
+}
+
+.check__svg {
+    margin-right: 10px;
+}
+
+/*popular lessions*/
+.home__content__popular__lessions__wrapper{
+    margin-top: 20px;
+}
+
+.home__content__popular__lession__card__wrapper {
+    margin-bottom: 2em;
+}
+
+.home__content__popular__lessions__cards__wrapper {
+    padding-left: 1em;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.parentPage__popular__lessions__cards__col {
+    margin-bottom: 2em;
+    margin-right: 1em;
+}
+
+/*section*/
+
+.home__section__wrapper{
+    position: relative;
+    margin-top: 50px;
+    background-color: #f0f0f0;
+    margin-bottom: 10em;
+}
+
+.home__section__title__wrapper{
+    margin-bottom: 30px;
+}
+
+.home__section__title {
+    font-weight: bold;
+    font-size: 2.2rem;
+    border-left: 3px solid var(--tph-gold);
+    padding-left: 0.3em !important;
+}
+
+.home__section__moreInfo {
+    color: var(--tph-cyan);
+    font-size: 1.1rem !important;
+    /*padding-right: 0px !important;*/
+    display: flex;
+    justify-content: end;
+}
+
+
+.home__section__moreInfo p{
+    font-size: 1.1rem;
+}
+
+.home__section__moreInfo p:hover {
+    color: var(--tph-gold);
+    cursor: pointer;  
+}
+
+.home__section__paragraph p {
+    opacity: 0.5;
+    font-size: 1.2rem;
+}
+
+.home__section__cards__wrapper {
+    display: flex !important;
+    position: relative;
+    padding-left: 1em;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.home__section__card {
+    width: 33%;
+    height: 100%;
+    background-color: var(--primary-white);
+    border-radius: 20px;
+}
+
+.home__section__card__header {
+    width: 100%;
+    background: linear-gradient(109.88deg, #7ecdc7 43.13%, #b1dfdc 71.12%, #cdf1ef 96.89%);
+    height: 36%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 1em 1em 1em 1.5em;
+}
+
+.home__section__card__title {
+    color: var(--primary-white);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.home__section__card__description {
+    font-size: 1rem;
+    color: #f0f0f0;
+}
+
+.home__section__card__content {
+    padding: 1em 1em 1em 1.5em; 
+    position: relative;  
+}
+
+.home__section__card__unit__progress__bar {
+    width: 80%;
+    height: 4px;
+    background-color: #dddddd;
+    border-radius: 5px;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+}   
+
+.home__section__card__unit__progress {
+    width: 20%;
+    height: 4px;
+    background-color: #7ecdc7;
+    border-radius: 5px;
+}
+
+.home__section__card__current__units__title {
+    font-size: 1.2rem;
+}
+
+.home__section__card__icon {
+    position: absolute;
+    left: 80%;
+    top: 10%;
+}
+
+.home__section__card__code {
+    display: flex;
+    align-items: center;
+    margin-top: 1.8em;
+}
+
+.home__section__card__code p {
+    font-size: 1.3rem;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.section__card__threedots {
+    position: absolute;
+    left: 89%;
+    top: 6%;
+}
+
+.home__section__card__button__wrapper{
+   position: absolute;
+   width: 100%;
+   left: 65%;
+   top: 65%;
+}
+
+
+.home__section__card__button {
+    background-color: #7ecdc7;
+    width: 30%;
+    height: 39px;
+    color: var(--primary-white);
+    text-decoration: none;
+    border: none;
+    padding-top: 7px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 8px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.home__join__section__card {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    background-color: #dddddd;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2em;
+}
+
+.circle__plus__icon {
+    text-align: center;
+    cursor: pointer;
+    padding-top: 48%;
+}
+
+.join__section__text {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 1em;
+    padding-bottom: 36%;
+    text-align: center;
+    color: #838282;
+}
+.home__section {
+    margin-top: 2em;
+}
+
+.home__section__paragraph {
+    padding-left: 1em !important;
+}
+
+
+/*icons*/
+.angleRightWhite {
+    position:  relative;
+    left: 15px;
+}
+
+.angleRightBlack {
+    position:  relative;
+    left: 15px;   
+}
+
+/*home-hero-icons*/
+.home__hero__icons{
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+
+}
+
+.home__hero__icons > * {
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.video__play__icon {
+    top: 5%;
+    left: -1.5%;
+    width: 94px;
+    height: 94px;
+}
+
+.brain__icon {
+    top: 60%;
+    left: 1.5%;
+    width: 72px;
+    height: 72px;
+}
+
+.tool__icon {
+    top: 12%;
+    left: 16%;
+    width: 64px;
+    height: 64px;   
+}
+
+.eye__icon {
+    top: 60%;
+    left: 13%;
+    width: 72px;
+    height: 72px;   
+}
+
+.menu__book__icon {
+    top: 38%;
+    left: 12%;
+    width: 56px;
+    height: 56px;   
+}
+
+.users__icon {
+    top: 58%;
+    left: 30%;
+    width: 56px;
+    height: 56px;
+}
+
+.speaker__icon {
+    top: 5%;
+    left: 27%;
+    width: 60px;
+    height: 60px;   
+}
+
+.idea__bulb__icon {
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 69%; 
+    left: 54.5%;
+    width: 72px;
+    height: 72px;
+    z-index: 3;
+}
+
+.setting__icon {
+    top: -3%;
+    left: 75%;
+    width: 104px;
+    height: 104px;    
+}
+
+.book__reader__icon {
+    top: 43%;
+    left: 78%;
+    width: 73px;
+    height: 73px;
+}
+
+.full__screen__icon {
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+    top: 94.5%;
+    left: 70%;
+    width: 56px;
+    height: 56px;
+}
+
+.return__circle__icon {
+    top: 20%;
+    left: 93%;
+    width: 72px;
+    height: 72px;
+}
+
+.code__icon {
+    top: 73%;
+    left: 86%;
+    width: 100px;
+    height: 100px;
+}
+
+
+@media only screen and (max-width: 1440px) {
+
+    .card__wrapper {
+        top: -10.2em;
+    }
+
+    .full__screen__icon {
+        left: 68.6%;
+    }
+
+    .users__icon {
+        left: 32.8%;
+        top: 82.5%;
+    }
+
+    .studentHome__hero__title {
+        top: 25%;
+    }
+
+    .idea__bulb__icon {
+        top: 72%;
+        left: 54.5%;
+    }
+
+    .code__icon {
+        left: 87%;
+    }
+
+    .eye__icon {
+        top: 76%;
+    }
+
+    .setting__icon {
+        top: -3%;
+    }
+
+    .tool__icon {
+        top: 12%;
+    }
+/*info cards*/
+    .projects__button__wrapper {
+        top: 85%;
+    }
+
+}
+
+
+@media only screen and (max-width: 1366px) {
+
+
+    .full__screen__icon {
+        left: 69%;
+    }
+
+    .card__wrapper {
+        top: -9.8em;
+    }
+
+    .idea__bulb__icon {
+        top: 71%;
+    }
+
+    .users__icon {
+        left: 31.5%;
+    }
+
+    .studentHome__hero__title {
+        top: 20%;
+    }
+
+    .eye__icon {
+        top: 75%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 1280px) {
+
+    .video__play__icon {
+        top: 5%;
+    }
+
+    .code__icon {
+        left: 86%;
+    }
+
+    .book__reader__icon {
+        top: 45%;
+        left: 77%;
+    }
+
+    .full__screen__icon {
+        left: 70%;
+    }
+
+    .card__wrapper {
+        top: -9.7em;
+    }
+
+    .idea__bulb__icon {
+        top: 69.5%;
+        left: 55%;
+    }
+
+    .users__icon {
+        top: 81.5%;
+        left: 29.5%;
+    }
+
+    .studentHome__hero__title {
+        top: 20%;
+    }
+
+    .eye__icon {
+        top: 75%;
+    }
+
+/*project info card*/
+    .projects__button__wrapper {
+        top: 85%;
+    }
+}
+
+@media only screen and (max-width: 1256px) {
+    .card__wrapper {
+        top: -9.6em;
+    }
+
+    .eye__icon {
+        top: 75%;
+    }
+
+    .full__screen__icon {
+        left: 71%;
+    }
+
+    .idea__bulb__icon {
+        top: 69%;
+    }
+
+    .brain__icon {
+        top: 60%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+    .studentHome__hero__title h6 {
+        font-size: 1.6rem;
+    }
+
+    .studentHome__hero__title h1 {
+        font-size: 3rem;
+    }
+
+    .studentHome__hero__title p{
+        font-size: 1rem;
+    }
+
+    .card__wrapper {
+        top: -6.8em;
+        left: 1.2%;
+        height: 40%;
+        width: 30%;
+    }
+
+    .card__blockly {
+        margin-left: 8em;
+        margin-top: 0;
+    }
+
+    .card__blockly img {
+        width: 90%;
+        height: 90%;
+    }
+
+    /*.card__wavy__bg {
+        position: absolute;
+    }
+*/
+    .card__wavy__bg img {
+        width: 100%;
+    }
+
+    .button__wrapper{
+        top: 68%;
+    }
+
+    .button__wrapper__button {
+        width: 8em;
+        height: 3em;
+        font-size: 0.9rem;
+        padding-left: 10px;
+        padding-right: 0px;
+    }
+
+    .button__wrapper__button img {
+       left: 0.1em;
+       width: 30%;
+       height: 30%;
+    }
+
+
+/*icons*/
+    .video__play__icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .video__play__icon img {
+        width: 45%;
+        height: 45%;
+    }
+    
+    .brain__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .brain__icon img {
+        width: 45%;
+        height: 45%;
+    }
+    
+    .menu__book__icon {
+        top: 43%;
+        left: 10%;
+        width: 42px;
+        height: 42px;
+    }
+
+    .menu__book__icon img {
+        width: 42%;
+        height: 42%;
+    }
+    
+    .idea__bulb__icon {
+        top: 72.5%;
+        left: 52%;
+        width: 53px;
+        height: 53px;
+    }
+
+
+    .idea__bulb__icon img {
+        width: 42%;
+        height: 42%;
+    }
+
+    .users__icon {
+        left: 33.5%;
+        top: 84%;
+        width: 43px;
+        height: 43px;
+    }
+
+
+    .eye__icon {
+        top: 75%;
+        width: 58px;
+        height: 58px; 
+    }
+
+    .eye__icon img {
+        width: 42%;
+        height: 42%;
+    }
+
+    .speaker__icon {
+        width: 55px;
+        height: 55px;   
+    }
+
+    .speaker__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .setting__icon {
+        /*top: 2.8em;*/
+        width: 64px;
+        height: 64px;    
+    }
+
+    .setting__icon img {
+        width: 45%;
+        height: 45%;
+    }
+    
+
+    .tool__icon {
+        left: 14%;
+        width: 48px;
+        height: 48px;
+
+    }
+
+    .tool__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .book__reader__icon {
+        left: 81%;
+        width: 55px;
+        height: 55px;
+    }
+
+    .book__reader__icon img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .full__screen__icon {
+        top: 91.5%;
+        left: 65%;
+    }
+
+
+/*project info card*/
+
+    .project__info__card {
+        width: 98%;
+    }
+
+    .owl__coding__svg {
+        width: 40%;
+        height: 100%;
+        left: 57%;
+        top: -0.5%;
+    }
+
+    .project__info__card__left__side h3 {
+        font-size: 1.56rem;
+    }
+
+    .project__info__card__left__side p {
+        font-size: 1rem;
+    }
+
+
+/*lession info card*/
+
+    .lession__info__card {
+        margin-left: 2em;
+        width: 98%;
+    }
+
+    .lession__info__card__left__side h3 {
+        font-size: 1.56rem;
+    }
+
+    .lession__info__card__left__side p {
+        font-size: 1rem;
+        padding-right: 10.8em;
+    }
+
+    .owl__reading__svg {
+        width: 60%;
+        height: 100%;
+        top: 3%;
+        left: 52%;
+
+    }
+
+    .lessions__button__wrapper {
+        left: 63%;
+    }
+
+}
+
+@media only screen and (max-width: 991px) {
+    .card__wrapper {
+        top: -6.6em;
+    }
+
+/*lession info card*/
+    .lessions__button__wrapper {
+        left: 50%;
+    }
+
+/*popular project*/
+    .project__card__content__title p {
+        font-size: 1.42rem;
+        margin-top: 0;
+    }
+
+    .popular__project__card__total {
+        font-size: 0.8rem;
+        left: 5%;
+    }
+
+}
+
+
+@media only screen and (max-width: 870px) {
+    .button__wrapper__button {
+        width: 7em;
+        height: 2.8em;
+        font-size: 0.9rem;
+        padding-left: 10px;
+        padding-right: 0px;
+    }
+
+    .button__wrapper__button img {
+       left: 0.1em;
+       width: 30%;
+       height: 30%;
+    }
+
+    .studentHome__hero__title {
+        left: -2%;
+    }
+
+    .studentHome__hero__title h6 {
+        font-size: 1.3rem;
+    }
+
+    .studentHome__hero__title h1 {
+        font-size: 2.7rem;
+    }
+
+    .studentHome__hero__title p{
+        font-size: 0.7rem;
+        width: 50%;
+    }
+
+    .card__wrapper {
+        top: -5.8em;
+    }
+
+/*lession info card*/
+
+
+    .lession__info__card__left__side p {
+        font-size: 1rem;
+        padding-right: 10.8em;
+    }
+
+    .owl__reading__svg {
+        top: 1%;
+    }
+
+    .lessions__button__wrapper {
+        left: 50%;
+    }
+
+    /*icons*/
+
+    .menu__book__icon {
+        top: 48%;
+        left: 12%;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .video__play__icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .video__play__icon img {
+        width: 45%;
+        height: 45%;
+    }
+
+    .brain__icon {
+        top: 57%;
+        width: 50px;
+        height: 50px;
+    }
+
+    .brain__icon img {
+        width: 45%;
+        height: 45%;
+    }
+
+    .tool__icon {
+        width: 40px;
+        height: 40px;   
+    }
+
+    .tool__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .eye__icon {
+        width: 43px;
+        height: 43px;   
+    }
+
+    .eye__icon img {
+        width: 42%;
+        height: 42%;
+    }
+
+    .menu__book__icon {
+        width: 38px;
+        height: 38px;   
+    }
+
+
+    .menu__book__icon img {
+        width: 42%;
+        height: 42%;
+    }
+
+    .users__icon {
+        top: 83%;
+        width: 35px;
+        height: 35px;
+    }
+
+    .users__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .speaker__icon {
+        width: 45px;
+        height: 45px;   
+    }
+
+    .speaker__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .idea__bulb__icon {
+        top: 71.5%;
+        left: 54%;
+        width: 43px;
+        height: 43px;
+    }
+
+    .idea__bulb__icon img {
+        width: 42%;
+        height: 42%;
+    }
+
+    .setting__icon {
+        /*top: 2.5em;*/
+        /*left: 35em;*/
+        width: 60px;
+        height: 60px;    
+    }
+
+    .setting__icon img {
+        width: 45%;
+        height: 45%;
+    }
+
+    .book__reader__icon {
+        left: 82%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .book__reader__icon img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .full__screen__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .full__screen__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .return__circle__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .return__circle__icon img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .code__icon {
+        top: 70%;
+        left: 88%;
+        width: 60px;
+        height: 60px;
+    }
+
+    .code__icon img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .card__wrapper {
+        top: -5.2em;
+    }
+
+    .studentHome__hero__title {
+        top: 18%;
+    }
+
+    .studentHome__hero__title h6 {
+        font-size: 1rem;
+    }
+
+    .studentHome__hero__title h1 {
+        font-size: 2.2rem;
+    }
+
+    .studentHome__hero__title p{
+        font-size: 0.8rem;
+        width: 50%;
+        margin-top: 3em;
+    }
+
+    
+/*project info card*/
+
+    .owl__coding__svg {
+        width: 40%;
+        height: 100%;
+    }
+
+    .project__info__card__left__side h3 {
+        font-size: 1.4rem;
+        width: 170%;
+    }
+
+    .project__info__card__left__side p {
+        font-size: 0.8rem;
+    }
+
+
+/*lession info card*/
+
+    .lession__info__card {
+        margin-left: 1em;
+    }
+
+    .lession__info__card__left__side h3 {
+        font-size: 1.4rem;
+        padding-right: 4em;
+    }
+
+    .lession__info__card__left__side p {
+        font-size: 0.8rem;
+    }
+
+    .owl__reading__svg {
+        width: 62%;
+        height: 100%;
+        left: 46%;
+    }
+    .button__wrapper {
+        top: 66%;
+        left: 40%;
+    }
+    .button__wrapper__button {
+        padding-left: 0px !important;
+        width: 8em;
+
+    }
+    .button__wrapper__button img {
+        width: 19% !important;
+    }
+}
+
+/*max width 767px */
+@media only screen and (max-width:  767px) {
+    .home__join__section__card {
+        margin-left: 0;
+        margin-top: 3em;
+        width: 100% !important;
+    }
+
+    .home__section__card {
+        width: 100% !important;
+    }
+
+    /*info cards*/
+    .home__info__cards {
+        margin-bottom: 2em;
+    }
+/*lession info cards*/
+    .lession__info__card {
+        margin-left: 0;
+    }
+
+    .owl__reading__svg {
+        top: -5%;
+        left: 46%;
+    }
+
+    .lessions__button__wrapper {
+        left: 63%;
+    }
+
+    .lession__info__card__left__side p {
+        padding-right: 15.8em;
+    }
+
+/*project info card*/
+    .owl__coding__svg {
+        top: -7.5%;
+    }
+
+
+}
+
+@media only screen and (max-width: 570px) {
+
+    .home__content {
+        padding-right: 3em !important;
+        padding-left: 3em !important;
+    }
+
+    .card__blockly {
+        margin-left: 5em;
+    }
+    .card__wrapper {
+        padding: 0;
+        top: -3.7em;
+    }
+
+
+    .studentHome__hero__title h6 {
+        font-size: 0.8rem;
+    }
+
+    .studentHome__hero__title h1 {
+        font-size: 1.8rem;
+    }
+
+    .studentHome__hero__title p{
+        font-size: 0.6rem;
+        width: 50%;
+        margin-top: 2em;
+    }
+
+    .button__wrapper__button {
+        width: 8em;
+        height: 2.8em;
+        font-size: 0.6rem;
+    }
+
+/*popular project*/
+    .home__content__popular__projects__cards__wrapper {
+        /*margin-left: 4.5em !important;*/
+    }
+/*popular lession*/
+
+    .home__content__popular__lessions__cards__wrapper {
+        padding-left: 13%;
+    }
+
+
+/*info cards*/
+    .home__info__cards {
+        margin-bottom: 2em;
+    }
+/*lession info cards*/
+    .lession__info__card {
+        margin-left: 0;
+    }
+
+    .owl__reading__svg {
+        top: -3%;
+        left: 44%;
+    }
+
+    .lessions__button__wrapper {
+        left: 63%;
+    }
+
+    .lession__info__card__left__side p {
+        padding-right: 15.8em;
+    }
+
+/*project info card*/
+    .owl__coding__svg {
+        top: -7.5%;
+    }
+
+/*section*/
+    .home__section {
+        padding-right: 3em !important;
+        padding-left: 3em !important;
+    }
+
+    .home__section__cards__wrapper {
+        padding: 1em;
+    }
+
+    .home__section__title {
+        font-size: 1.7rem;
+    }
+
+    .home__section__moreInfo > p {
+        margin-bottom: 0;
+        margin-top: 0.5em;
+    }
+
+    .home__join__section__card {
+        margin-left: 0;
+        margin-top: 3em;
+        width: 100% !important;
+    }
+
+    .home__section__card {
+        width: 100% !important;
+    }
+
+/*icons*/
+    .video__play__icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .video__play__icon img {
+        width: 45%;
+        height: 45%;
+    }
+
+    .brain__icon {
+        top: 57%;
+        width: 43px;
+        height: 43px;
+    }
+
+    .brain__icon img {
+        width: 45%;
+        height: 45%;
+    }
+
+    .tool__icon {
+        width: 35px;
+        height: 35px;   
+    }
+
+    .tool__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .eye__icon {
+        width: 40px;
+        height: 40px;   
+    }
+
+    .eye__icon img {
+        width: 42%;
+        height: 42%;
+    }
+
+    .menu__book__icon {
+        top: 50%;
+        width: 30px;
+        height: 30px;   
+    }
+
+
+    .menu__book__icon img {
+        width: 42%;
+        height: 42%;
+    }
+
+    .users__icon {
+        top: 83%;
+        width: 25px;
+        height: 25px;
+    }
+
+    .users__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .speaker__icon {
+        width: 38px;
+        height: 38px;   
+    }
+
+    .speaker__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .idea__bulb__icon {
+        top: 73%;
+        left: 53%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .idea__bulb__icon img {
+        width: 42%;
+        height: 42%;
+    }
+
+    .setting__icon {
+        width: 50px;
+        height: 50px;    
+    }
+
+    .setting__icon img {
+        width: 45%;
+        height: 45%;
+    }
+
+    .book__reader__icon {
+        left: 82%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .book__reader__icon img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .full__screen__icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .full__screen__icon img {
+        width: 43%;
+        height: 43%;
+    }
+
+    .return__circle__icon {
+        width: 40px;
+        height: 40px;
+        left: 92%;
+    }
+
+    .return__circle__icon img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .code__icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .code__icon img {
+        width: 40%;
+        height: 40%;
+    }
+
+}
+
+@media only screen and (max-width: 414px) {
+    .studentHome__hero__title {
+        top: 18%;
+    }
+
+/*    .studentHome__hero__title p{
+        margin-top: 1em;
+    }*/
+    .return__circle__icon {
+        top: 14%;
+    }
+
+    .setting__icon {
+        left: 68%;
+    }
+}
+
+
+@media only screen and (max-width: 425px) {
+    .studentHome__hero__bg {
+        position: relative;
+        /*margin-left: 0 !important;
+        margin-right: 0 !important;*/
+        height: 80vw;
+        width: 100vw;
+    }
+
+    .card__wrapper {
+        top: -4.5em;
+        width: 41%;
+    }
+
+    .card__image__owlVector {
+        width: 57%;
+    }
+
+    .card__blockly {
+        margin-left: 5em;
+    }
+
+    /*icons*/
+    .users__icon {
+        left: 27.5%;
+    }
+
+    .full__screen__icon {
+        left: 70.5%;
+        width: 25px;
+        height: 25px;
+    }
+
+    .video__play__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brain__icon {
+        top: 75%;
+        width: 38px;
+        height: 38px;
+    }
+
+    .tool__icon {
+        width: 30px;
+        height: 30px;   
+    }
+
+    .eye__icon {
+        top: 90%;
+        width: 35px;
+        height: 35px;   
+    }
+
+    .menu__book__icon {
+        top: 58%;
+        width: 30px;
+        height: 30px;   
+    }
+
+    .users__icon {
+        top: 83%;
+        width: 22px;
+        height: 22px;
+    }
+
+    .speaker__icon {
+        width: 33px;
+        height: 33px;   
+    }
+
+    .idea__bulb__icon {
+        top: 75%;
+        left: 53%;
+        width: 30px;
+        height: 30px;
+    }
+
+    .setting__icon {
+        width: 45px;
+        height: 45px;    
+    }
+
+    .book__reader__icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .return__circle__icon {
+        width: 35px;
+        height: 35px;
+        left: 90%;
+    }
+
+    .code__icon {
+        width: 45px;
+        height: 45px;
+        top: 93%;
+    }
+
+/*popular lession*/
+    .home__content__popular__lessions__cards__wrapper {
+        padding-left: 5.2%;
+    }
+
+/*info lession*/
+    .lessions__button__wrapper {
+        left: 48%;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 375px) {
+    .card__wrapper {
+        top: -4em;
+        width: 45%;
+    }
+
+    .button__wrapper {
+        top: 62%;
+    }
+     
+    .card__image__owlVector {
+        width: 64%;
+    }
+
+    .studentHome__hero__title h6 {
+        font-size: 0.7rem;
+    }
+
+    .studentHome__hero__title h1 {
+        font-size: 1.6rem;
+    }
+
+    .studentHome__hero__title p{
+        font-size: 0.5rem;
+        width: 60%;
+        margin-top: 3em;
+    }
+/*project info*/
+    .project__info__card {
+        padding-bottom: 4px !important;
+    }
+
+    .project__info__card__right__side {
+        display: none;
+    }
+
+    .project__info__card__left__side h3{
+        width: 100%;
+    }
+
+    .projects__button__wrapper__mobile {
+        display: flex;
+        left: 42%;
+        top: -13%;
+    }
+
+/*lesssion info*/
+    .lession__info__card {
+        padding-bottom: 4px !important;
+    }
+
+    .lession__info__card__right__side {
+        display: none;
+    }
+
+    .lession__info__card__left__side h3{
+        padding-right: 0;
+    }
+
+
+    .lession__info__card__left__side p {
+        padding-right: 0;
+    }
+
+    .lessions__button__wrapper__mobile {
+        display: flex;
+        left: 42%;
+        top: -2.5em;
+    }
+
+/*icons*/
+    .users__icon {
+        top: 84%;
+        left: 25.5%;
+    }
+
+    .full__screen__icon {
+        left: 71.8%;
+    }
+
+    .code__icon {
+        width: 40px;
+        height: 40px;
+        left: 87%;
+    }
+
+    .return__circle__icon {
+        left: 88%;
+    }
+
+    .idea__bulb__icon {
+        top: 74.5%;
+    }
+
+
+}
+
+@media only screen and (max-width: 360px) {
+    .card__wrapper {
+        top: -3.8em;
+    }
+    .return__circle__icon {
+        top: 8%;
+    }
+    .studentHome__hero__title {
+        top: 16%;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 334px) {
+
+/*popular project*/
+    .project__card__content__title p {
+        font-size: 1.2rem;
+        margin-top: 0;
+    }
+
+    .popular__project__card__total {
+        font-size: 0.8rem;
+        left: 4%;
+    }
+
+/*project and lession info*/
+    .projects__button__wrapper__mobile, .lessions__button__wrapper__mobile{
+        left: 54%;
+        top: -12%;
+    }
+    .projects__button__mobile, .lessions__button__mobile {
+        width: 100px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+
+    .projects__button__wrapper__mobile .projects__button__mobile .angleRightWhite {
+        left: 10px;
+    }
+
+    .lessions__button__wrapper__mobile{
+        left: 54%;
+        top: -2.5em;
+    }
+
+    .lessions__button__wrapper__mobile .lessions__button__mobile .angleRightWhite {
+        left: 10px;
+    }
+
+
+    .card__wrapper {
+        top: -3.5em;
+    }
+
+    .button__wrapper {
+        top: 62%;
+    }
+
+    .button__wrapper__button {
+        font-size: 0.4rem;
+        width: 9em;
+        height: 3em;
+    }
+     
+    .card__image__owlVector {
+        width: 64%;
+    }
+
+    .studentHome__hero__title h6 {
+        font-size: 0.7rem;
+    }
+
+    .studentHome__hero__title h1 {
+        font-size: 1.4rem;
+    }
+
+    .studentHome__hero__title p{
+        font-size: 0.4rem;
+        width: 50%;
+        margin-top: 2.5em;
+    }
+
+/*icons*/
+    .users__icon {
+        width: 20px;
+        height: 20px;
+        left: 25%;
+    }
+
+    .video__play__icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tool__icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .speaker__icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .setting__icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .full__screen__icon {
+        left: 71.8%;
+    }
+
+    .code__icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .return__circle__icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .idea__bulb__icon {
+        top: 74.5%;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .card__wrapper {
+        top: -3.4em;
+    }
+}
+@media only screen and (max-width: 292px) {
+    .card__wrapper {
+        top: -3em;
+    }
+
+    .studentHome__hero__title h6 {
+        font-size: 0.5rem;
+    }
+
+    .studentHome__hero__title h1 {
+        font-size: 1.2rem;
+    }
+
+    .studentHome__hero__title p{
+        font-size: 0.35rem;
+    }
+    .button__wrapper__button {
+        width: 9em;
+        padding-left: 2px;
+    }
+    .button__wrapper__button img {
+        width: 14%;
+    }
+
+}

@@ -1,0 +1,252 @@
+.parentContainer {
+  background-color: var(--tph-purple);
+  min-height: calc(100vh - var(--nav-size));
+  max-height: 100%;
+  margin-top: var(--nav-size);
+}
+
+.leftContent {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+
+.leftContent__text {
+  margin: auto;
+  width: 70%;
+  padding: 2em 0;
+}
+
+.leftContent__text__tphLogo {
+  text-align: center;
+}
+.leftContent__text__tphLogo__image {
+  width: 8em;
+}
+
+.leftContent__text__paragraphContainer {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.leftContent__text__paragraphContainer__content {
+  color: var(--primary-white);
+  font-size: 1.1em;
+  line-height: 200%;
+  font-weight: 500;
+}
+
+.leftContent__text__bookMale {
+  margin-top: 2em;
+}
+
+.leftContent__text__bookMale__image {
+  width: 18em;
+}
+
+.rightContent {
+  background-color: var(--primary-white);
+  min-height: calc(100vh - var(--nav-size));
+  height: 100%;
+  margin: auto;
+}
+
+.formContainer {
+  width: 60%;
+  min-height: calc(100vh - var(--nav-size));
+  height: 100%;
+  margin: auto;
+  padding: 4em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formContainer__form {
+  min-height: 100%;
+  transition: all 0.2s 0.7s;
+}
+
+.formContainer__form__title {
+  font-size: 1.6em;
+  color: var(--primary-black);
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  line-height: 200%;
+}
+
+.formContainer__form__subTitle {
+  font-size: 0.9em;
+  font-weight: normal;
+  margin-bottom: 3em;
+  border-left: 0.2em solid var(--primary-black);
+  padding-left: 1em;
+  line-height: 200%;
+}
+
+.formContainer__form__inputContainer {
+  margin-top: 2em;
+}
+
+.formContainer__form__rememberForgotContainer {
+  margin-top: 2em;
+}
+
+.formContainer__form__rememberForgotContainer__ForgotPassword {
+  font-size: 0.9em;
+  color: var(--tph-orange);
+  text-decoration: none;
+  text-align: right;
+}
+
+.formContainer__form__submitButtons {
+  margin: 2.5em 0;
+}
+
+.formContainter__form__submitButtons__loginButton {
+  width: 10em;
+  align-self: center;
+  background-color: var(--tph-purple);
+  border: none;
+  outline: none;
+  height: 46px;
+  border-radius: 12em;
+  color: var(--primary-white);
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.formContainer__form__signupMethod__text {
+  font-size: 1em;
+}
+
+.formContainer__form__signupMethod__text__link {
+  color: var(--tph-orange);
+  font-size: 1em;
+}
+
+.formContainer__form__socialTextContainer {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  align-self: center;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--secondary-white);
+  line-height: 0.1em;
+}
+
+.formContainer__form__socialTextContainer__text {
+  background: var(--primary-white);
+  padding: 0 10px;
+  font-size: 1em;
+}
+
+.formContainer__form__socialMedia {
+  margin: 3em 0;
+}
+
+.formContainer__toReadRulesLogin {
+  color: var(--tph-orange);
+  margin-top: 2em;
+}
+
+.formContainer__toReadRulesLogin__content {
+  font-size: 0.9em;
+}
+
+.formContainer__toReadRulesLogin:hover
+  .formContainer__toReadRulesLogin__iconContainer
+  .formContainer__toReadRulesLogin__iconContainer__icon {
+  cursor: pointer;
+  color: var(--tph-orange);
+}
+
+.formContainer__toReadRulesLogin__iconContainer__icon {
+  text-decoration: none;
+  font-size: 1em;
+  color: var(--tph-orange);
+  margin-right: 1em;
+}
+
+.formContainer__toReadRulesLogin__content {
+  color: var(--tph-orange);
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.rememberMe {
+  color: var(--tph-orange);
+}
+
+@media (width: 1920px) {
+  .leftContent {
+    padding: 16em 0;
+    width: 50%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .leftContent {
+    height: 100%;
+    width: 60%;
+    padding: 4em 4em;
+  }
+
+  .rightContent {
+    padding: 1em 4em;
+  }
+
+  .formContainer {
+    margin-top: 6em;
+    margin-bottom: 6em;
+    padding: 0;
+    width: 90%;
+  }
+}
+
+@media (max-width: 870px) {
+  .formContainer {
+    width: 90%;
+    padding: 3em 0;
+  }
+
+  .leftContent {
+    padding: 4em 4em 0;
+  }
+
+  .rightContent {
+    padding: 0;
+  }
+  .leftContent__text__bookMale {
+    display: none;
+  }
+
+  .leftContent__text__tphLogo {
+    text-align: center;
+  }
+
+  .leftContent__text {
+    padding: 0 0.5em;
+    text-align: center;
+    width: 100%;
+  }
+
+  .formContainer__form__rememberForgotContainer__ForgotPassword {
+    margin-top: 2.5em;
+  }
+}
+
+@media (max-width: 576px) {
+  .leftContent {
+    padding: 4em 1.5em 0;
+  }
+
+  .rightContent {
+    padding: 0;
+  }
+
+  .formContainter__form__submitButtons__loginButton {
+    width: 100%;
+  }
+}

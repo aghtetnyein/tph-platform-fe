@@ -1,0 +1,340 @@
+.parent {
+  margin-top: var(--nav-size);
+  height: calc(100vh - var(--nav-size));
+  background-color: var(--tph-purple);
+  overflow-y: auto;
+}
+
+.parent__danceCanva {
+  min-height: calc(100vh - var(--nav-size));
+  height: 100%;
+  width: 100%;
+  background-color: var(--tph-purple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em 2em 0 !important;
+}
+
+.parent__danceCanva__inputFields {
+  width: 70%;
+}
+
+.parent__danceCanva__inputFields__textInput {
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+
+.parent__danceCanva__tabsParent {
+  margin-top: 3em;
+  align-self: flex-start;
+  display: flex;
+  color: var(--primary-white);
+}
+
+.parent__danceCanva__tabsParent__tab {
+  height: 36px;
+  padding: 0 1em;
+  border-radius: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--primary-icon-background);
+}
+
+.parent__danceCanva__canvasParent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.parent__danceCanva__canvasParent__code {
+  background-color: var(--primary-white);
+  width: 400px;
+  height: 400px;
+  padding: 0.5em;
+}
+
+.parent__danceCanva__canvasParent__code > textarea {
+  margin: 0;
+  background: none;
+  outline: none;
+  border: none;
+  resize: none;
+  width: 100%;
+  height: 100%;
+}
+
+.parent__danceCanva__actionButtons {
+  width: 100%;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3em;
+}
+
+.parent__danceCanva__runloading {
+  position: relative;
+  top: -16em;
+}
+
+.parent__danceCanva__actionButtons__iconSelf {
+  color: var(--primary-white);
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.parent__danceCanva__actionButtons__slider {
+  -webkit-appearance: none;
+  margin: 0 0.5em;
+  width: 4.5em;
+  height: 0.2em;
+  background: var(--tph-gold);
+  outline: none;
+}
+
+.parent__danceCanva__actionButtons__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  background: var(--primary-white);
+  cursor: pointer;
+}
+
+.parent__danceCanva__actionButtons__slider::-moz-range-thumb {
+  width: 1em;
+  height: 1em;
+  background: var(--primary-white);
+  cursor: pointer;
+}
+
+.parent__blocklyWorkspace {
+  height: 100%;
+  width: 100%;
+}
+
+.parent__blocklyWorkspace__Nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--primary-icon-background);
+  color: white;
+  margin: 0;
+  padding: 1em;
+  width: 100%;
+  min-height: 8vh;
+  border-bottom: 1px solid var(--tph-purple);
+}
+
+.parent__blocklyWorkspace__Nav__instructions {
+  margin-top: 1em;
+  padding: 0.5em;
+  background-color: var(--tertiary-white);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.parent__blocklyWorkspace__Nav__instructions__content {
+  background-color: var(--primary-white);
+  color: var(--primary-black);
+  padding: 0.5em 1em;
+  height: 13em;
+  width: 100%;
+  border-radius: 5px;
+  overflow-y: scroll;
+  cursor: text;
+}
+
+.parent__blocklyWorkspace__Nav__instructions__content ul {
+  list-style: none;
+}
+
+/*HintComponent*/
+:root {
+  --arrow-width: 24px;
+  --arrow-height: calc(var(--arrow-width * (20 / 12)));
+  --fill-color: #f1f1f1;
+  --shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.shadow {
+  filter: drop-shadow(var(--shadow));
+}
+
+.popover {
+  display: inline-flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  top: 80%;
+  right: 100%;
+  z-index: 9;
+}
+
+.popover_box {
+  order: 2;
+  width: 400px;
+  height: 250px;
+  background-color: var(--fill-color);
+  border-radius: 5px;
+  padding-right: 40px;
+}
+
+.popover_arrow {
+  order: 1;
+  padding: 5px;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.triangle {
+  margin-bottom: -3px;
+  color: var(--fill-color);
+  display: block;
+  width: var(--arrow-width);
+  height: var(--arrow-height);
+}
+
+.parent__blocklyWorkspace__hints__crossx {
+  height: 20px;
+  position: absolute;
+  left: 370px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.parent__blocklyWorkspace__hints__tooltip__crossx {
+  position: absolute;
+  cursor: pointer;
+  left: 80px;
+  top: 6px;
+}
+
+.parent__blocklyWorkspace__hints__content {
+  background-color: var(--primary-white);
+  color: var(--primary-black);
+  padding: 0.5em 1em;
+  height: 7em;
+  line-height: 1.5em;
+  width: 100%;
+  border-radius: 5px;
+  overflow-y: scroll;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.hints_wrapper {
+  display: flex;
+}
+.hint__title {
+  position: absolute;
+  top: 38px;
+  left: 54px;
+}
+
+.hints_vector_title {
+  position: relative;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+.hints__vector__under__text {
+  color: var(--primary-black);
+  position: absolute;
+  top: 180px;
+  left: 10%;
+  text-shadow: 0px 4px 4px #000000;
+  font-size: 18px;
+}
+
+.parent__blocklyWorkspace__hints__vector img {
+  width: 120px;
+  padding-top: 30px;
+}
+
+.bg__ellipse {
+  position: absolute;
+  top: 100px;
+  left: 23px;
+  width: 80px;
+  height: 79px;
+  background-color: #fbb615;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.parent__blocklyWorkspace__hints__vector {
+  padding-left: 5px;
+}
+
+.parent__blocklyWorkspace__hints__vector img {
+  cursor: pointer;
+}
+
+.parent__blocklyWorkspace__hints__button__wrapper {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.hint_button {
+  background-color: var(--tph-purple);
+  width: 78px;
+  color: var(--primary-white);
+  text-decoration: none;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/*tooltip d-none*/
+.tooltip__dnone {
+  display: none;
+}
+
+/*workspace concept instruction*/
+.parent__concept__instructions__content {
+  background-color: var(--primary-white);
+  display: block;
+  color: var(--primary-black);
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 4em;
+  padding-right: 2em;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  cursor: text;
+  line-height: 2em;
+}
+
+.parent__concept__instructions__content ul {
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  #defaultCanvas0 {
+    width: 300px;
+    height: 300px;
+  }
+  .songOptionStyle {
+    width: 300px;
+  }
+}

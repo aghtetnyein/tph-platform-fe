@@ -1,0 +1,23 @@
+.socialButton {
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.2em;
+  color: var(--tph-purple);
+  border: 1px solid var(--tertiary-white);
+  background-color: var(--primary-white);
+  text-decoration: none;
+  transition: 0.3s;
+  margin: 0 0.4em;
+}
+
+.socialButton:hover {
+  background-color: var(--secondary-white);
+  text-decoration: none;
+}
+
+.socialButton__socialIcon {
+  width: 2em;
+}

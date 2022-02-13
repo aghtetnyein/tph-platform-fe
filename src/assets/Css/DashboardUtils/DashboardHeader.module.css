@@ -1,0 +1,28 @@
+/*hero*/
+
+.parentPage__hero__bg {
+  	background: linear-gradient(98.92deg, #57475b 33.55%, #dcbad8 94.4%);
+  	height: 41vw;
+  	position: relative;
+}
+
+.parentPage__hero__bg__image {
+  	background-image: url("../../Images/project-db-bg.svg");
+ 	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	height: 100%;
+}
+
+
+@media only screen and (max-width: 425px) {
+	.parentPage__hero__bg {
+		height: 80vw;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.parentPage__hero__bg {
+		height: 100vw;
+	}
+}

@@ -1,0 +1,57 @@
+.buttonFill {
+  width: 10em;
+  align-self: center;
+  background-color: var(--tph-purple);
+  border: none;
+  outline: none;
+  height: 46px;
+  border-radius: 10em;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buttonFill:hover {
+  background-color: var(--tph-light-purple);
+  /* filter: contrast(200%); */
+}
+
+.buttonFill:focus {
+  outline: 0;
+}
+
+.buttonOutline {
+  width: 10em;
+  align-self: center;
+  background-color: transparent;
+  border: 1px solid var(--tph-purple);
+  border: none;
+  outline: none;
+  height: 46px;
+  border-radius: 12em;
+  color: var(--tph-purple);
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buttonOutline:hover {
+  color: var(--tph-light-purple);
+  border: 1px solid var(--tph-light-purple);
+}
+
+.buttonOutline:focus {
+  outline: 0;
+}
+
+
+@media (max-width: 767px) {
+  .buttonFill {
+    width: 100%;
+  }
+
+  .buttonOutline {
+    width: 100%;
+  }
+}
