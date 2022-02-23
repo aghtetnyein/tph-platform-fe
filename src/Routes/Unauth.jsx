@@ -40,6 +40,8 @@ const GuestRoute = () => {
         },
         { path: "dashboard", element: <DancePartyDashboard /> },
         { path: "workspace", element: <Dance /> },
+        { path: "character-gallery/:character", element: <DancePartyDashboard />}
+
       ],
     },
     {
