@@ -63,8 +63,14 @@ export default function StudentNavbar() {
   const match = (path) =>
     path ? !!matchPath({ path, end: false }, pathname) : false;
 
+  const logoutHandler = () => {
+    dispatch({
+      type: "AUTH_FAIL",
+    });
+  };
+
   return (
-    <Disclosure as="nav" className="bg-tph_purple">
+    <Disclosure as="nav" className="sticky top-0 z-50 bg-tph_purple">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -256,19 +262,19 @@ export default function StudentNavbar() {
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
-                          <RouterLink
-                            to="/logout"
+                          <div
                             className={classNames(
                               active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700 flex items-center"
+                              "block px-4 py-2 text-sm text-gray-700 flex items-center cursor-pointer"
                             )}
+                            onClick={logoutHandler}
                           >
                             <LogoutIcon
                               className="h-5 w-5"
                               aria-hidden="true"
                             />
                             <p className="font-medium ml-2 mr-1">Logout</p>
-                          </RouterLink>
+                          </div>
                         )}
                       </Menu.Item>
                     </Menu.Items>

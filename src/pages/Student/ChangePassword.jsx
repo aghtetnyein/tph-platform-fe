@@ -82,6 +82,7 @@ const Profile = () => {
             <form onSubmit={handleSubmit(onSave)}>
               <div>
                 <TextField
+                  required
                   register={register("oldPassword")}
                   type={"password"}
                   name={"oldPassword"}
@@ -96,6 +97,7 @@ const Profile = () => {
               <div className="md:flex md:space-x-6">
                 <div className="mt-6 w-full">
                   <TextField
+                    required
                     register={register("password")}
                     type={"password"}
                     name={"password"}
@@ -109,6 +111,7 @@ const Profile = () => {
                 </div>
                 <div className="mt-6 w-full">
                   <TextField
+                    required
                     register={register("passwordConfirm")}
                     type={"password"}
                     name={"passwordConfirm"}
@@ -146,7 +149,7 @@ const Profile = () => {
                     <Button
                       type={"button"}
                       variant={"secondary"}
-                      label={"Edit"}
+                      label={"Edit password"}
                       handleClick={() => setEdit(true)}
                     />
                   </div>

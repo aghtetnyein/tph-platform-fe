@@ -1,0 +1,41 @@
+.fill-height {
+  height: calc(82vh);
+  width: 100%;
+}
+
+.dance-canva {
+  background-color: var(--tph-purple);
+}
+
+.blocklyNavStyle {
+  background-color: #39293d;
+  color: white !important;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 0 0 !important;
+  height: 8vh;
+  border-bottom: 1px solid var(--tph-purple);
+}
+
+@media (max-width: 768px) {
+  #defaultCanvas0 {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .songOptionStyle {
+    width: 300px !important;
+  }
+}
+
+#defaultCanvas0 {
+  width: 400px;
+  height: 400px;
+}
+
+.songOptionStyle {
+  width: 400px;
+}
+
+.buttonStyle {
+  border-radius: 30px !important;
+}

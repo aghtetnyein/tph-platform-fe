@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 
 //custom imports
 import UnAuth from "./Unauth";
@@ -11,7 +12,7 @@ import Loading from "../pages/Loading";
 const Auth = () => {
   //instances
   const dispatch = useDispatch();
-  // const URL = process.env.REACT_APP_API_URL;
+  const URL = process.env.REACT_APP_API_URL;
 
   //redux - states
   const auth = useSelector((state) => state.auth);
@@ -24,20 +25,69 @@ const Auth = () => {
   });
 
   const validateToken = async (token) => {
-    dispatch({
-      type: "AUTH_BUFFER",
-      payloads: {
-        user: {
-          name: "MG MG",
-          age: 14,
+    setAuthState({ ...authState, checked: false });
+    if (token !== "") {
+      await axios({
+        url: `${URL}/users/slug`,
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        role: "student",
-      },
-    });
-    setAuthState({
-      checked: true,
-      validate: true,
-    });
+      }).then(async (response) => {
+        let userSlug = response.data;
+        await fetch(`${URL}/users/${userSlug}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json;charset=UTF-8",
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
+          .then((res) => res.json())
+          .then((resJson) => {
+            if (resJson) {
+              dispatch({
+                type: "AUTH_BUFFER",
+                payloads: {
+                  user: resJson[0],
+                  role:
+                    resJson[0].teacher === 1
+                      ? "teacher"
+                      : resJson[0].teacher === 0
+                      ? "student"
+                      : "guest",
+                },
+              });
+              setAuthState({
+                checked: true,
+                validate: true,
+              });
+            } else {
+              dispatch({
+                type: "AUTH_BUFFER_FAIL",
+              });
+              setAuthState({
+                checked: true,
+                validate: false,
+              });
+            }
+          })
+          .catch((err) => {
+            // authFailHandler();
+            setAuthState({
+              checked: true,
+              validate: false,
+            });
+          });
+      });
+    } else {
+      setAuthState({
+        checked: true,
+        validate: false,
+      });
+    }
   };
 
   //effects
@@ -53,7 +103,7 @@ const Auth = () => {
       } else if (data.role === "student") {
         return <Student />;
       } else {
-        return <UnAuth />;
+        return <>No role found!</>;
       }
     } else {
       return <UnAuth />;

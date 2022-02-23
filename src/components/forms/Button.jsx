@@ -5,6 +5,7 @@ const Button = ({
   variant,
   label,
   handleClick,
+  prefixIcon,
   postfixIcon,
   textColor,
 }) => {
@@ -14,8 +15,9 @@ const Button = ({
         <button
           type={type}
           onClick={handleClick}
-          className="w-full inline-flex items-center justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-semibold text-white bg-tph_purple hover:bg-tph_purple_hover focus:outline-none"
+          className="w-full inline-flex items-center items-center justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-semibold text-white bg-icon_bg hover:bg-tph_purple_hover focus:outline-none"
         >
+          {prefixIcon}
           {label}
           {postfixIcon}
         </button>
@@ -23,8 +25,9 @@ const Button = ({
         <button
           type={type}
           onClick={handleClick}
-          className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-full text-sm font-semibold text-gray-500 bg-white hover:bg-gray-100"
+          className="w-full inline-flex items-center justify-center py-2 px-4 border border-gray-300 rounded-full text-sm font-semibold text-gray-500 bg-white hover:bg-gray-100"
         >
+          {prefixIcon}
           {label}
           {postfixIcon}
         </button>
@@ -32,8 +35,9 @@ const Button = ({
         <button
           type={type}
           onClick={handleClick}
-          className={`w-full inline-flex justify-center text-sm font-semibold ${textColor}`}
+          className={`w-full inline-flex items-center justify-center text-sm font-semibold ${textColor}`}
         >
+          {prefixIcon}
           {label}
           {postfixIcon}
         </button>
@@ -41,8 +45,19 @@ const Button = ({
         <button
           type={type}
           onClick={handleClick}
-          className={`w-full inline-flex justify-center py-2 px-4 rounded-full text-sm font-semibold text-white bg-red hover:bg-red_hover`}
+          className={`w-full inline-flex items-center justify-center py-2 px-4 rounded-full text-sm font-semibold text-white bg-red hover:bg-red_hover`}
         >
+          {prefixIcon}
+          {label}
+          {postfixIcon}
+        </button>
+      ) : variant === "border" ? (
+        <button
+          type={type}
+          onClick={handleClick}
+          className={`w-full inline-flex items-center justify-center py-2 px-4 rounded-full text-sm font-semibold text-white bg-transparent border border-gray-100 hover:bg-gray-600`}
+        >
+          {prefixIcon}
           {label}
           {postfixIcon}
         </button>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link as RouterLink } from "react-router-dom";
 
 // components
@@ -64,20 +65,30 @@ const accountSettingsItems = [
     title: "Change account type",
     subtitle: "Change the type of your account",
     postfixIcon: moreIcon,
-    link: "/account-settings/account-type",
-  },
-  {
-    id: "logout",
-    icon: "data:image/png;base64,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",
-    iconBg: "bg-red",
-    title: "Logout",
-    subtitle: "Logout this account",
-    postfixIcon: moreIcon,
-    link: "/logout",
+    link: "/account-settings/change-account-type",
   },
 ];
 
+const logoutItem = {
+  id: "logout",
+  icon: "data:image/png;base64,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",
+  iconBg: "bg-red",
+  title: "Logout",
+  subtitle: "Logout this account",
+  postfixIcon: moreIcon,
+};
+
 const AccountSettings = () => {
+  // instances
+  const dispatch = useDispatch();
+
+  // functions
+  const logoutHandler = () => {
+    dispatch({
+      type: "AUTH_FAIL",
+    });
+  };
+
   return (
     <Page title="Account Settings | TPH Dance Party">
       <div className="px-6 py-8 md:px-12 lg:px-20 lg:py-16 xl:px-32">
@@ -118,6 +129,9 @@ const AccountSettings = () => {
               </RouterLink>
             </div>
           ))}
+          <div onClick={logoutHandler}>
+            <CardWithIcon item={logoutItem} />
+          </div>
         </div>
       </div>
     </Page>

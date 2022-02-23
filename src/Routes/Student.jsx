@@ -15,11 +15,13 @@ import StudentLessons from "../pages/Student/StudentLessons";
 import StudentProjects from "../pages/Student/StudentProjects";
 
 const Student = () => {
+  console.log("student routes");
   return useRoutes([
     {
       path: "/",
       element: <StudentLayout />,
       children: [
+        { path: "", element: <Navigate to="/account-settings" replace /> },
         {
           path: "account-settings",
           children: [

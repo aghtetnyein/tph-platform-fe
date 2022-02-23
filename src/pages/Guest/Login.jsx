@@ -1,4 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 // form
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -9,22 +11,73 @@ import Page from "../../components/utils/Page";
 import { TextField, Button } from "../../components/forms";
 import TPHLogoWithoutText from "../../assets/logos/TPHLogoWithoutText.png";
 
+// constants
+const URL = process.env.REACT_APP_API_URL;
+
 const schema = yup.object().shape({
   email: yup.string().email().required("Email is required"),
   password: yup.string().min(8).max(32).required(),
 });
 
 export default function Login() {
+  // instances
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
     // reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    await fetch(`${URL}oauth/token`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        grant_type: process.env.REACT_APP_OAUTH_GRANT_TYPE,
+        client_id: process.env.REACT_APP_OAUTH_CLIENT_ID,
+        client_secret: process.env.REACT_APP_OAUTH_CLIENT_SECRET,
+        username: data.email,
+        password: data.password,
+      }),
+    })
+      .then((res) => res.json())
+      .then((resJson) => {
+        if (resJson.access_token) {
+          dispatch({
+            type: "AUTH_SUCCESS",
+            payloads: { token: resJson.access_token },
+          });
+          navigate("/");
+        } else if (resJson.error === "invalid_grant") {
+          [
+            {
+              type: "manual",
+              name: "email",
+              message: resJson.message,
+            },
+            {
+              type: "manual",
+              name: "password",
+              message: resJson.message,
+            },
+          ].forEach(({ name, type, message }) =>
+            setError(name, { type, message })
+          );
+        }
+      })
+      .catch((err) => {
+        console.log("error is ", err);
+      });
+  };
 
   return (
     <Page title="Login | TPH Dance Party">
@@ -93,8 +146,12 @@ export default function Login() {
                       </RouterLink>
                     </div>
                   </div>
-                  <div>
-                    <Button type={"submit"} label={"Log in"} />
+                  <div className="w-1/2">
+                    <Button
+                      variant={"primary"}
+                      type={"submit"}
+                      label={"Log in"}
+                    />
                   </div>
                   <div className="text-sm">
                     You don't have an account?{" "}

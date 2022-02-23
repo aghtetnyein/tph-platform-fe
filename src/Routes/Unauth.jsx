@@ -10,10 +10,18 @@ import PageNotFound from "../pages/PageNotFound";
 import Login from "../pages/Guest/Login";
 import Register from "../pages/Guest/Register";
 import DancePartyDashboard from "../pages/Guest/DancePartyDashboard";
+import Dance from "../pages/DanceParty/DancePartyWorkspace";
+
+// test
+// import BlocklyTest from "../pages/Test/BlocklyTest";
+// import DanceTest from "../pages/Test/Dance";
 
 // Guest routes
 const GuestRoute = () => {
+  console.log("guest routes");
+
   return useRoutes([
+    { path: "", element: <Navigate to="/login" replace /> },
     {
       path: "/login",
       element: <Login />,
@@ -31,13 +39,14 @@ const GuestRoute = () => {
           element: <Navigate to="/dance-party/dashboard" replace />,
         },
         { path: "dashboard", element: <DancePartyDashboard /> },
+        { path: "workspace", element: <Dance /> },
       ],
     },
     {
       path: "/404",
       element: <PageNotFound />,
     },
-    { path: "*", element: <Navigate to="/404" replace /> },
+    { path: "*", element: <Navigate to="/login" replace /> },
   ]);
 };
 

@@ -44,7 +44,7 @@ const RegisterAccount = ({ next }) => {
 
   return (
     <div>
-      <h2 className="mt-16 text-3xl font-extrabold text-gray-900">
+      <h2 className="mt-12 text-3xl font-extrabold text-gray-900">
         Register account.
       </h2>
       <p className="mt-2 font-medium text-tph_purple text-sm">
@@ -52,7 +52,7 @@ const RegisterAccount = ({ next }) => {
       </p>
 
       <div>
-        <div className="mt-10">
+        <div className="mt-8">
           <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <div className="md:flex md:space-x-4">
               <div className="flex-1">

@@ -1,0 +1,43 @@
+.blocklyFlyoutScrollbar {
+  display: none;
+}
+
+.blocklyTrash {
+  filter: brightness(0);
+  filter: contrast(5000%);
+  opacity: 0.5 !important;
+}
+
+.blocklyZoom > image {
+  filter: brightness(0);
+  filter: contrast(5000%);
+  opacity: 0.5 !important;
+}
+
+.blocklyToolboxDiv {
+  padding: 0;
+  z-index: 1;
+}
+
+.blocklyToolboxCategory {
+  margin: 0;
+}
+
+.blocklyTreeRow {
+  padding: 8px 0;
+  padding-top: 12px;
+  height: initial;
+}
+
+.blocklyTreeLabel {
+  margin-top: 0.5rem;
+  font-size: 0.9rem !important;
+  font-weight: semi-bold;
+}
+
+.blocklyTreeRowContentContainer {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
