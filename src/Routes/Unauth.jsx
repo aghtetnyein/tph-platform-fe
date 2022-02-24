@@ -10,6 +10,7 @@ import PageNotFound from "../pages/PageNotFound";
 import Login from "../pages/Guest/Login";
 import Register from "../pages/Guest/Register";
 import DancePartyDashboard from "../pages/Guest/DancePartyDashboard";
+import DancePartyCharacterGallery from "../pages/Guest/DancePartyCharacterGallery";
 import Dance from "../pages/DanceParty/DancePartyWorkspace";
 
 // test
@@ -40,7 +41,7 @@ const GuestRoute = () => {
         },
         { path: "dashboard", element: <DancePartyDashboard /> },
         { path: "workspace", element: <Dance /> },
-        { path: "character-gallery/:character", element: <DancePartyDashboard />}
+        { path: "character-gallery/:character", element: <DancePartyCharacterGallery />}
 
       ],
     },
