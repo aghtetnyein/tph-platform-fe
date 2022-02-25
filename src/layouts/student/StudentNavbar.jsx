@@ -88,7 +88,9 @@ export default function StudentNavbar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <img className="h-8 w-auto" src={TPHLogo} alt="Workflow" />
+                  <RouterLink to="/">
+                    <img className="h-8 w-auto" src={TPHLogo} alt="Workflow" />
+                  </RouterLink>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">

@@ -5,14 +5,25 @@ import PageNotFound from "../pages/PageNotFound";
 
 // Layouts
 import StudentLayout from "../layouts/student";
+import StudentDashboardLayout from "../layouts/student/StudentDashboard";
 
 // pages
-import AccountSettings from "../pages/Student/AccountSettings";
-import Profile from "../pages/Student/Profile";
-import ChangePassword from "../pages/Student/ChangePassword";
-import ChangeAccountTypeSettings from "../pages/Student/ChangeAccountTypeSettings";
-import StudentLessons from "../pages/Student/StudentLessons";
-import StudentProjects from "../pages/Student/StudentProjects";
+import {
+  AccountSettings,
+  ChangeAccountTypeSettings,
+  ChangePassword,
+  Profile,
+  StudentHomePage,
+  StudentLessons,
+  StudentProjects,
+} from "../pages/Student";
+
+import {
+  Projects,
+  EnrolledCourses,
+  Classes,
+  Certificates,
+} from "../components/Student/Dashboard";
 
 const Student = () => {
   console.log("student routes");
@@ -21,7 +32,7 @@ const Student = () => {
       path: "/",
       element: <StudentLayout />,
       children: [
-        { path: "", element: <Navigate to="/account-settings" replace /> },
+        { path: "", element: <StudentHomePage /> },
         {
           path: "account-settings",
           children: [
@@ -40,7 +51,19 @@ const Student = () => {
             },
           ],
         },
+        {
+          path: "dashboard",
+          element: <StudentDashboardLayout />,
+          children: [
+            { path: "", element: <Navigate to="projects" replace /> },
+            { path: "projects", element: <Projects /> },
+            { path: "courses", element: <EnrolledCourses /> },
+            { path: "classes", element: <Classes /> },
+            { path: "certificates", element: <Certificates /> },
+          ],
+        },
         { path: "lessons", element: <StudentLessons /> },
+        { path: "projects", element: <StudentProjects /> },
         { path: "projects", element: <StudentProjects /> },
       ],
     },

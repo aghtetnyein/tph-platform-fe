@@ -9,6 +9,7 @@ import {
   CardVertical,
   TabsWithUnderline,
   Footer,
+  ProjectsCardHorizontal,
 } from "../../components/elements";
 
 // icons
@@ -19,7 +20,6 @@ import {
   PuzzleIcon,
   LightBulbIcon,
 } from "@heroicons/react/solid";
-import ProjectsCardHorizontal from "../../components/elements/ProjectsCardHorizontal";
 
 // constants
 const DancePartyBg =
