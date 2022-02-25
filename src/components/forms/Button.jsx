@@ -4,6 +4,8 @@ const Button = ({
   type,
   variant,
   label,
+  backgroundColor,
+  labelColor,
   handleClick,
   prefixIcon,
   postfixIcon,
@@ -15,7 +17,8 @@ const Button = ({
         <button
           type={type}
           onClick={handleClick}
-          className="w-full inline-flex items-center items-center justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-semibold text-white bg-icon_bg hover:bg-tph_purple_hover focus:outline-none"
+          className="w-full inline-flex items-center justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-semibold text-white bg-icon_bg hover:bg-tph_purple_hover focus:outline-none"
+          style={{ background: backgroundColor, color: labelColor }}
         >
           {prefixIcon}
           {label}

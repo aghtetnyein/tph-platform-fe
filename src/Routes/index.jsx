@@ -31,7 +31,7 @@ const Auth = () => {
     setAuthState({ ...authState, checked: false });
     if (token !== "") {
       await axios({
-        url: `${URL}/users/slug`,
+        url: `${URL}users/slug`,
         method: "GET",
         headers: {
           "Content-Type": "application/json;charset=UTF-8",
@@ -40,7 +40,7 @@ const Auth = () => {
         },
       }).then(async (response) => {
         let userSlug = response.data;
-        await fetch(`${URL}/users/${userSlug}`, {
+        await fetch(`${URL}users/${userSlug}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json;charset=UTF-8",

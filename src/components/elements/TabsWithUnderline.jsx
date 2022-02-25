@@ -2,7 +2,7 @@ import React from "react";
 
 const TabsWithUnderline = ({ tabsOptions, currentTab, changeTab }) => {
   return (
-    <div className="border-b border-gray-200">
+    <div className="md:border-b md:border-gray-200">
       {/* <div> */}
       <ul className="flex flex-wrap">
         {tabsOptions.map((item, index) => (

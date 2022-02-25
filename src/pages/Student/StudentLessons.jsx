@@ -122,7 +122,7 @@ const EnrolledCourses = [
   },
 ];
 
-const DancersDetails = [
+const OneHourCourses = [
   {
     id: 1,
     image:
@@ -249,7 +249,7 @@ const StudentLessons = () => {
             subtitle={"Watch 1-hour tutorials if you don't have enough time"}
           />
           <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {DancersDetails.map((item, index) => (
+            {OneHourCourses.map((item, index) => (
               <div key={index}>
                 <CardVertical
                   image={item.image}

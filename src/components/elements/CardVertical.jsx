@@ -26,7 +26,7 @@ const CardVertical = ({
   return (
     <>
       {!avatar ? (
-        <div className="w-full bg-white rounded-lg border border-gray-200 shadow-md">
+        <div className="w-full bg-white rounded-lg border border-gray-200 shadow-md -z-10">
           <img
             className="rounded-t-lg w-full h-56 object-cover bg-gray-100"
             src={image}
@@ -50,7 +50,7 @@ const CardVertical = ({
           </div>
         </div>
       ) : (
-        <div className="w-full bg-white rounded-lg border border-gray-200 shadow-md">
+        <div className="w-full bg-white rounded-lg border border-gray-200 shadow-md -z-10">
           <div className="relative w-full h-64 overflow-hidden">
             <img
               src={image}
@@ -79,8 +79,8 @@ const CardVertical = ({
             </div>
           </div>
 
-          <div className="p-4 lg:flex">
-            <div className="w-1/3">
+          <div className="p-4 flex items-center space-x-4">
+            <div>
               <img
                 className="rounded-full w-14 h-14 object-cover bg-gray-100"
                 src={avatar}
