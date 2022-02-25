@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 // components
 import { Button } from "../forms";
 
@@ -16,7 +16,13 @@ const CardVertical = ({
   postfixIcon,
   projectTitle,
   date,
+  url
 }) => {
+  
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/dance-party/character-gallery/${url}`);
+  };
   return (
     <>
       {!avatar ? (
@@ -36,7 +42,7 @@ const CardVertical = ({
                   type={"button"}
                   variant={"primary"}
                   label={buttonLabel}
-                  handleClick={() => console.log("hello")}
+                  handleClick={handleClick}
                   postfixIcon={postfixIcon}
                 />
               </div>

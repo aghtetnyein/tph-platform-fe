@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 
+//Scroll to top
+import ScrollToTop from "../ScrollToTop";
+
 //custom imports
 import UnAuth from "./Unauth";
 import Student from "./Student";
@@ -99,14 +102,26 @@ const Auth = () => {
   if (authState.checked) {
     if (authState.validate) {
       if (data.role === "teacher") {
-        return <Teacher />;
+        return (
+            <ScrollToTop>
+              <Teacher />
+            </ScrollToTop>
+          );
       } else if (data.role === "student") {
-        return <Student />;
+        return (
+            <ScrollToTop>
+              <Student />
+            </ScrollToTop>
+          );
       } else {
         return <>No role found!</>;
       }
     } else {
-      return <UnAuth />;
+      return (
+          <ScrollToTop>
+            <UnAuth />
+          </ScrollToTop>
+        );
     }
   } else {
     return <Loading />;

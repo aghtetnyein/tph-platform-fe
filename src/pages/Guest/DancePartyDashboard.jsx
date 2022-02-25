@@ -64,6 +64,7 @@ const DancersDetails = [
     body: demiText,
     buttonLabel: "Read more",
     postfixIcon: moreIcon,
+    url: "kyout-sel-sin",
   },
   {
     id: 2,
@@ -73,6 +74,7 @@ const DancersDetails = [
     body: demiText,
     buttonLabel: "Read more",
     postfixIcon: moreIcon,
+    url: "u-shwe-yoe-daw-moe",
   },
   {
     id: 3,
@@ -82,6 +84,7 @@ const DancersDetails = [
     body: demiText,
     buttonLabel: "Read more",
     postfixIcon: moreIcon,
+    url: "thu-ngel-thaw",
   },
   {
     id: 4,
@@ -91,6 +94,7 @@ const DancersDetails = [
     body: demiText,
     buttonLabel: "Read more",
     postfixIcon: moreIcon,
+    url: "thu-ngel-thaw",
   },
 ];
 
@@ -199,6 +203,7 @@ const DancePartyDashboard = () => {
                 body={item.body}
                 buttonLabel={item.buttonLabel}
                 postfixIcon={item.postfixIcon}
+                url={item.url}
               />
             </div>
           ))}

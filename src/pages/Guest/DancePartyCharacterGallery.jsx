@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+//Components
+import Footer from "../../components/elements/Footer";
 
 //images
 import gallaryTitle from "../../assets/images/gallary-title.svg";
@@ -10,21 +13,28 @@ import dance2 from "../../assets/images/dance-2.png";
 import traditions from "../../assets/images/traditions.png";
 
 const DancePartyCharacterGallery = () => {
-	
+
+	const navigate = useNavigate();
+  	const handleClick = () => {
+    	navigate(`/dance-party/dashboard`);
+	}
 	return (
 		<>	
-			<div className="pb-32">
+			<div >
 				<div className="flex justify-center mt-16 mb-14 relative">
+			
+					<div className="hidden md:absolute md:left-[5%] md:top-[-8%] md:w-[140px] md:h-[45px] md:rounded-md md:flex md:justify-center md:items-center md:bg-tertiary_white cursor-pointer" onClick={handleClick}>Back</div>
+					
 					<img className="w-[30em] z-10" src={gallaryTitle} alt="gallery-title"></img>
 					<div className="border-b-[3px] w-[90%] absolute m-auto top-[47%]"></div>
 				</div>
 				<div className="w-[70%] mx-auto h-full">
 					<div>
-						<div className="mb-14">
-							<div className="border-l-2 pl-4 text-4xl border-tph_gold font-bold h-full pt-2 pb-2">ဇာတ်သဘင်၏သမိုင်း</div>
-							<div></div>
+						<div className="mb-14 flex justify-between">
+							<div className="border-l-2 pl-4 text-2xl md:text-4xl border-tph_gold font-bold h-full pt-2 pb-2">ဇာတ်သဘင်၏သမိုင်း</div>
+							<div className="hidden md:w-[140px] md:h-[45px] md:rounded-md md:flex md:justify-center md:items-center md:bg-tertiary_white">Like</div>
 						</div>
-						<div className="leading-8">
+						<div className="text-sm md:text-base md:leading-8 leading-8">
 							ဇာတ်ပွဲသည်၁၈ရာစုနှောင်းပိုင်းမှယနေ့ထိတိုင်တည်တံပြီးဆက်လက်တိုးတက်ကျော်ကြားနေသော
 				            ညလုံးပေါက်ကပြရသောဖျော်ဖြေမှုတစ်မျိုးဖြစ်သည်။ “ဇာတ်ပွဲ”
 				            စကားလုံးတွင်ပါဝင်သော “ဇာတ်” သည်ဗုဒ္ဓဟောကြားခဲ့သော
@@ -42,8 +52,8 @@ const DancePartyCharacterGallery = () => {
 					</div>
 
 					<div className="mb-16">
-						<div className="border-l-2 pl-4 text-4xl border-tph_gold font-bold h-full pt-2 pb-2 mb-14">ဇာတ်ပွဲ၏အနုပညာ</div>
-						<div className="leading-8">
+						<div className="border-l-2 pl-4 text-2xl md:text-4xl border-tph_gold font-bold h-full pt-2 pb-2 mb-14">ဇာတ်ပွဲ၏အနုပညာ</div>
+						<div className="text-sm md:text-base md:leading-8 leading-8">
 							ပါဝင်ဖျော်ဖြေသောအနုပညာရှင်များမှာအဆိုအကပညာရှင်(မင်းသား၊မင်းသမီး)၊ဆိုင်းဝိုင်းမှအတီးအမှုတ်ပညာရှင်၊လူရွှင်တော်များတို့ဖြစ်သည်။ဤသို့အနုပညာရှင်ပေါင်းစုံပါဝင်၍ဖျော်ဖြေမှုကြောင့်ဇာတ်ပွဲသည်
 							ယဉ်ကျေးမှုအနုပညာပေါင်းစုံရောပွန်းပါဝင်သောဖန်တီးမှုတစ်ရပ်ဖြစ်လာသည်။
 							ဇာတ်မင်းသား၊မင်းသမီးတို့၏ရှေးနန်းမူများထင်ဟပ်သောကကွက်များ၊ဆိုင်းဆရာရွာစား၏မြူးကြွသောတီးလုံးများ၊လူရွှင်တော်များ၏လူမှုဘဝကိုထင်ဟပ်သောပြက်လုံးများကြောင့်ဇာတ်ပွဲလာပရိသတ်တို့စိတ်ခံစားမှုရသမျိုးစုံကိုညလုံးပေါက်ရရှိရသည်။
@@ -56,7 +66,7 @@ const DancePartyCharacterGallery = () => {
 						<div><img className="" src={quoteMark2}></img></div>
 					</div>
 			            
-		            <div className="text-4xl font-bold leading-[4rem] w-[80%] text-center mx-auto">
+		            <div className="text-xl md:text-4xl font-bold md:leading-[4rem] leading-[3rem] w-[80%] text-center mx-auto">
 		              မြန်မာ့ဇာတ်ပွဲများသည် ရိုးရာယဉ်ကျေးမှု၊ ဘာသာတရားအဆုံးအမ၊
 		              ခေတ်သစ်အမြင်များ ပေါင်းစည်းမှုတို့နှင့်အတူ ယနေ့ခေတ်တိုင်
 		              ရှင်သန်တိုးတက်နေသော အနုပညာတစ်ရပ်ဖြစ်နေဆဲဖြစ်သည်။
@@ -70,10 +80,10 @@ const DancePartyCharacterGallery = () => {
 			    	</div>
 
 			    	<div className="mb-14 mt-4">
-						<div className="border-l-2 pl-4 text-4xl border-tph_gold font-bold h-full pt-2 pb-2">ယဉ်ကျေးမှုအပေါ်လွှမ်းမိုးမှု</div>
+						<div className="border-l-2 pl-4 text-2xl md:text-4xl border-tph_gold font-bold h-full pt-2 pb-2">ယဉ်ကျေးမှုအပေါ်လွှမ်းမိုးမှု</div>
 					</div>
 
-					<div className="leading-8">
+					<div className="text-sm md:text-base md:leading-8 leading-8">
 						ဇာတ်ပွဲများစတင်ပေါ်ပေါက်စဉ်ကဇာတကများကပြလေ့ရှိသောကြောင့်
 						ဇာတ်ပွဲများကို ဘုရားပွဲကဲ့သို့သော ဘာသာရေးဆိုင်ရာပွဲများတွင်
 						တွေ့ရလေ့ရှိသည်။ ဇာတ်ပွဲများသည် စတင်ပေါ်ပေါက်ချိန်မှပင်
@@ -86,12 +96,35 @@ const DancePartyCharacterGallery = () => {
 			    </div>
 
 			    <div className="flex justify-center mt-16">
-			    	<img src={traditions} className="w-[40%] h-[40%]" alt="traditions"></img>
+			    	<img src={traditions} className="md:w-[45%] w-[80%]" alt="traditions"></img>
 			    </div>
 			    <div className="flex justify-center mt-16">
 			    	<div className="pl-4 text-1xl italic h-full pt-2 pb-2">Explore more articles</div>
 			    </div>
-			    <div className="border-b-2 border-tph_gold w-[6%] mx-auto"></div>
+			    <div className="border-b-2 border-tph_gold w-[75px] mx-auto"></div>
+
+			    <div className="grid md:grid-cols-3 w-[50%] gap-4 mx-auto mt-14 mb-16">
+			    	<div className="flex bg-tertiary_white w-full h-[76px] border-primary_grey rounded-md">
+			    		<div className="md:text-lg w-[60%] h-full flex justify-center items-center">Article 1</div>
+			    		<div className="w-[40%] h-full">
+			    			<img src={dance2} alt="dance2" className="h-full w-full object-cover rounded-r-md"></img>
+			    		</div>
+			    	</div>
+			    	<div className="flex bg-tertiary_white w-full h-[76px] border-primary_grey rounded-md">
+			    		<div className="md:text-lg w-[60%] h-full flex justify-center items-center">Article 2</div>
+			    		<div className="w-[40%] h-full">
+			    			<img src={traditions} className="h-full w-full object-cover rounded-r-md" alt="traditions"></img>
+			    		</div>
+			    	</div>
+			    	<div className="flex bg-tertiary_white w-full h-full border-primary_grey rounded-md">
+			    		<div className="md:text-lg w-[60%] h-[76px] flex justify-center items-center">Article 3</div>
+			    		<div className="w-[40%] h-full">
+			    			<img src={zattThabinHistory} alt="zatt-thabin-history" className="h-full w-full object-cover rounded-r-md"></img>
+			    		</div>
+			    	</div>
+			    </div>
+
+			    <Footer/>
 			</div>
 		</>
 	)
