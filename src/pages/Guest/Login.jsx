@@ -51,6 +51,7 @@ export default function Login() {
     })
       .then((res) => res.json())
       .then((resJson) => {
+        console.log(resJson);
         if (resJson.access_token) {
           dispatch({
             type: "AUTH_SUCCESS",
