@@ -144,16 +144,16 @@ export default function GuestNavbar() {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                       >
-                        <Listbox.Options className="absolute z-10 mt-2 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+                        <Listbox.Options className="absolute z-10 mt-2 w-40 bg-tph_purple border shadow-lg max-h-56 rounded-lg p-2 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                           {language.map((item) => (
                             <Listbox.Option
                               key={item.id}
                               className={({ active }) =>
                                 classNames(
                                   active
-                                    ? "text-white bg-tph_purple"
+                                    ? "text-white bg-icon_bg"
                                     : "text-gray-900",
-                                  "cursor-pointer select-none relative py-2 pl-3 pr-9"
+                                  "cursor-pointer select-none relative p-3 pr-9 rounded-lg"
                                 )
                               }
                               value={item}
@@ -171,7 +171,7 @@ export default function GuestNavbar() {
                                         selected
                                           ? "font-semibold"
                                           : "font-normal",
-                                        "ml-3 block truncate"
+                                        "ml-3 block truncate text-white"
                                       )}
                                     >
                                       {item.name}
@@ -179,14 +179,7 @@ export default function GuestNavbar() {
                                   </div>
 
                                   {selected ? (
-                                    <span
-                                      className={classNames(
-                                        active
-                                          ? "text-white"
-                                          : "text-tph_purple",
-                                        "absolute inset-y-0 right-0 flex items-center pr-4"
-                                      )}
-                                    >
+                                    <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-white">
                                       <CheckIcon
                                         className="h-5 w-5"
                                         aria-hidden="true"

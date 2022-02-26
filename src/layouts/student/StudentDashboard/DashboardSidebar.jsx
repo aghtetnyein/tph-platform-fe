@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { useLocation } from "react-router";
+import { useDispatch } from "react-redux";
 
 import {
   CalendarIcon,
@@ -44,8 +45,14 @@ function classNames(...classes) {
 const DashboardSidebar = () => {
   // instances
   const location = useLocation();
+  const dispatch = useDispatch();
 
-  console.log(location.pathname);
+  // functions
+  const logoutHandler = () => {
+    dispatch({
+      type: "AUTH_FAIL",
+    });
+  };
 
   return (
     <div className="w-20 md:w-48 lg:w-64 h-full bg-tph_purple">
@@ -99,8 +106,11 @@ const DashboardSidebar = () => {
             ))}
           </div>
 
-          <div className="border-t border-gray-400 py-3 ">
-            <div className="justify-center md:justify-start text-gray-300 hover:bg-icon_bg hover:text-white group flex items-center px-2 py-3 text-sm font-medium rounded-md cursor-pointer">
+          <div className="border-t border-gray-400 py-3">
+            <div
+              className="justify-center md:justify-start text-gray-300 hover:bg-icon_bg hover:text-white group flex items-center px-2 py-3 text-sm font-medium rounded-md cursor-pointer"
+              onClick={logoutHandler}
+            >
               <LogoutIcon
                 className="text-gray-400 group-hover:text-gray-300 md:mr-3 flex-shrink-0 h-6 w-6"
                 aria-hidden="true"

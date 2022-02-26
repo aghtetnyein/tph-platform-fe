@@ -22,7 +22,7 @@ const GuestRoute = () => {
   console.log("guest routes");
 
   return useRoutes([
-    { path: "", element: <Navigate to="/login" replace /> },
+    { path: "", element: <Navigate to="/dance-party/dashboard" replace /> },
     {
       path: "/login",
       element: <Login />,
@@ -41,8 +41,10 @@ const GuestRoute = () => {
         },
         { path: "dashboard", element: <DancePartyDashboard /> },
         { path: "workspace", element: <Dance /> },
-        { path: "character-gallery/:character", element: <DancePartyCharacterGallery />}
-
+        {
+          path: "character-gallery/:character",
+          element: <DancePartyCharacterGallery />,
+        },
       ],
     },
     {
