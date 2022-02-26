@@ -1,8 +1,6 @@
 import React from "react";
-
-//Components
+// components
 import { Button } from "../../components/forms";
-
 // images
 import DancePartyHint from "../../assets/images/DanceParty/dance-party-hint.png";
 import DancePartyHintTitle from "../../assets/images/DanceParty/dance-party-hint-title.png";
