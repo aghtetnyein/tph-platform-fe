@@ -101,6 +101,7 @@ const OneHourCourses = [
       "https://images.unsplash.com/photo-1515005318787-cc68052b38f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
     title: "Science Dance",
     body: demiText,
+    units: 10,
     buttonLabel: "Read more",
     postfixIcon: moreIcon,
   },
@@ -110,6 +111,7 @@ const OneHourCourses = [
       "https://images.unsplash.com/photo-1568120253392-9d9860aca03d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
     title: "Stars wars",
     body: demiText,
+    units: 21,
     buttonLabel: "Read more",
     postfixIcon: moreIcon,
   },
@@ -224,6 +226,7 @@ const StudentHomePage = () => {
                 <CardVertical
                   image={item.image}
                   title={item.title}
+                  units={item.units}
                   body={item.body}
                   buttonLabel={item.buttonLabel}
                   postfixIcon={item.postfixIcon}

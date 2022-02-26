@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
+import {useNavigate} from "react-router";
 
 // components
 import { Button } from "../../components/forms";
@@ -124,10 +125,19 @@ const popularProjects = [
 ];
 
 const DancePartyDashboard = () => {
+  // instances
+  const navigate = useNavigate();
+
   const tabsOptions = ["Trending", "Published"];
   const [currentTab, setCurrentTab] = useState("Trending");
   const changeTab = (item) => {
     setCurrentTab(item);
+  };
+
+  // functions
+  const handleClick = (url) => {
+    // console.log("gallary");
+    navigate(`/dance-party/character-gallery/${url}`);
   };
 
   return (
@@ -204,6 +214,7 @@ const DancePartyDashboard = () => {
                 buttonLabel={item.buttonLabel}
                 postfixIcon={item.postfixIcon}
                 url={item.url}
+                handleOnClick={() => handleClick(item.url)}
               />
             </div>
           ))}

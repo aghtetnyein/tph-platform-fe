@@ -26,7 +26,7 @@ const TextField = ({
         )}
       </div>
 
-      <div className="mt-1">
+      <div className="mt-2">
         <input
           {...register}
           id={name}
@@ -37,10 +37,10 @@ const TextField = ({
           placeholder={placeholder}
           value={value}
           disabled={disabled}
-          className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-tph_gold focus:border-tph_gold sm:text-sm"
+          className="appearance-none block w-full p-4 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-tph_gold focus:border-tph_gold sm:text-sm"
         />
       </div>
-      <p className="block text-sm font-medium text-red mt-1">{errors}</p>
+      <p className="block text-sm font-medium text-red mt-2">{errors}</p>
     </div>
   );
 };

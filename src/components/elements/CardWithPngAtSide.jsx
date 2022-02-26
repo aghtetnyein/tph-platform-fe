@@ -63,7 +63,7 @@ const CardWithPngAtSide = ({ item }) => {
               </p>
             )}
           </div>
-          <div className="mt-2 md:mt-0">
+          <div className="mt-2 md:mt-0 w-40">
             <Button
               type={"button"}
               variant={"primary"}

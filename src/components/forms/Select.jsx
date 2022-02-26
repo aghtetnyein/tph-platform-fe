@@ -29,7 +29,7 @@ export default function Select({
           <label className="block ml-1 text-sm font-medium text-red">*</label>
         )}
       </div>
-      <div style={{ marginTop: 5 }}>
+      <div className="mt-2">
         <Listbox
           value={currentItem}
           disabled={disabled}
@@ -39,7 +39,7 @@ export default function Select({
         >
           {({ open }) => (
             <div className="relative">
-              <Listbox.Button className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default sm:text-sm">
+              <Listbox.Button className="relative w-full bg-white border border-gray-300 rounded-lg shadow-sm pl-3 pr-10 py-4 text-left cursor-default sm:text-sm">
                 <span className="flex items-center">
                   <span className="block truncate">{currentItem.name}</span>
                 </span>

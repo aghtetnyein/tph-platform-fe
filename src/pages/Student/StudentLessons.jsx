@@ -129,6 +129,7 @@ const OneHourCourses = [
       "https://images.unsplash.com/photo-1515005318787-cc68052b38f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
     title: "Science Dance",
     body: demiText,
+    units: 5,
     buttonLabel: "Read more",
     postfixIcon: moreIcon,
   },
@@ -138,6 +139,7 @@ const OneHourCourses = [
       "https://images.unsplash.com/photo-1568120253392-9d9860aca03d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
     title: "Stars wars",
     body: demiText,
+    units: 23,
     buttonLabel: "Read more",
     postfixIcon: moreIcon,
   },
@@ -181,6 +183,7 @@ const StudentLessons = () => {
                 More over 200 lessons from over 30 teachers
               </p>
               <div className="absolute top-52 w-4/5 lg:top-64 md:w-2/3 lg:w-2/5 bg-gray-100 rounded-lg shadow-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 border border-gray-100 pb-4 px-5">
+                {/* <div className="absolute top-52 w-4/5 lg:top-64 md:w-2/3 lg:w-2/5 bg-white rounded-lg shadow-lg border border-gray-100 pb-4 px-5"> */}
                 <div className="flex justify-between -mt-6 md:-mt-7 md:mx-6 xl:mx-8">
                   {lessonsNotableIcons.map((icon, index) => (
                     <div
@@ -255,6 +258,7 @@ const StudentLessons = () => {
                   image={item.image}
                   title={item.title}
                   body={item.body}
+                  units={item.units}
                   buttonLabel={item.buttonLabel}
                   postfixIcon={item.postfixIcon}
                 />

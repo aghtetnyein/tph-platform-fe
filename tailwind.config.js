@@ -28,8 +28,9 @@ module.exports = {
         red: "#EE5C5C",
         red_hover: "#F04747",
         green: "#65CA69",
+        link_color: "#0000ee",
 
-        icon_bg: "#38293b",
+        icon_bg: "#39293d",
       },
     },
   },

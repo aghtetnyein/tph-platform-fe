@@ -73,6 +73,7 @@ const Projects = () => {
               avatar={item.avatar}
               projectTitle={item.projectTitle}
               date={item.date}
+              myProjects={true}
             />
           </div>
         ))}

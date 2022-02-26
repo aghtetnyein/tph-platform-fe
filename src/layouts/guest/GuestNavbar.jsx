@@ -14,7 +14,7 @@ import TPHLogo from "../../assets/logos/TPHLogo.svg";
 import TPHLogoWithoutText from "../../assets/logos/TPHLogoWithoutText.png";
 
 const navigation = [
-  { name: "Dashboard", href: "/", current: true },
+  { name: "Dashboard", href: "/dance-party/dashboard", current: true },
   { name: "Login", href: "/login", current: false },
   { name: "Register", href: "/register", current: false },
 ];
@@ -98,7 +98,7 @@ export default function GuestNavbar() {
                           item.current
                             ? "text-white"
                             : "text-gray-400 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
+                          "px-3 py-2 rounded-md text-sm font-semibold"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >

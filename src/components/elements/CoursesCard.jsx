@@ -77,11 +77,10 @@ const CoursesCard = ({ item }) => {
       <div className="p-4 w-full flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <KeyIcon
-            className="block h-5 w-5"
+            className="block h-5 w-5 text-gray-500"
             aria-hidden="true"
-            style={{ color: progressColor }}
           />
-          <p className="font-semibold text-sm" style={{ color: progressColor }}>
+          <p className="font-semibold text-sm text-gray-500">
             {sessionCode}
           </p>
         </div>

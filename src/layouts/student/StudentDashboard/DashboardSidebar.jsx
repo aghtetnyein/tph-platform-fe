@@ -49,7 +49,7 @@ const DashboardSidebar = () => {
 
   return (
     <div className="w-20 md:w-48 lg:w-64 h-full bg-tph_purple">
-      <div className="flex-shrink-0 flex bg-icon_bg p-4 hidden md:block">
+      <div className="flex-shrink-0 flex bg-tph_purple p-4 hidden md:block">
         <RouterLink
           to={"/profile"}
           className="flex-shrink-0 w-full group block"

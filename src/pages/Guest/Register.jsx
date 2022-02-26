@@ -57,15 +57,15 @@ export default function Register() {
 
   return (
     <Page title="Register | TPH Dance Party">
-      <div className="min-h-full flex">
-        <div className="hidden lg:block relative w-3/6 flex-1">
+      <div className="flex">
+        <div className="hidden lg:block relative w-1/2">
           <img
-            className="absolute inset-0 h-screen w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
             src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
             alt="login-img"
           />
         </div>
-        <div className="h-screen w-3/6 flex-1 flex flex-col py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+        <div className="min-h-screen w-1/2 flex-1 flex flex-col py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-lg lg:w-120">
             <img className="h-14 w-auto" src={TPHLogoWithoutText} alt="logo" />
 

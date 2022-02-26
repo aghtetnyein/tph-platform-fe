@@ -43,13 +43,15 @@ const ProjectsCardHorizontal = (props) => {
           {projectsCount}+ created
         </p>
 
-        <Button
-          type={"button"}
-          variant={"secondary"}
-          label={buttonLabel}
-          handleClick={() => console.log("hello")}
-          postfixIcon={postfixIcon}
-        />
+        <div className="w-40">
+          <Button
+            type={"button"}
+            variant={"secondary"}
+            label={buttonLabel}
+            handleClick={() => console.log("hello")}
+            postfixIcon={postfixIcon}
+          />
+        </div>
       </div>
     </div>
   );

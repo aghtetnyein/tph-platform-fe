@@ -28,7 +28,7 @@ const CardHorizontal = ({
         <div className="w-36">
           <Button
             type={"button"}
-            variant={"primary"}
+            variant={"border"}
             label={buttonLabel}
             handleClick={() => console.log("hello")}
             postfixIcon={postfixIcon}

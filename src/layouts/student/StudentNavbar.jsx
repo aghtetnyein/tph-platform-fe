@@ -21,6 +21,15 @@ const navigation = [
   { name: "Projects", href: "/projects" },
 ];
 
+const menuItems = [
+  { name: "Profile", icon: "user", href: "/profile" },
+  {
+    name: "Account Settings",
+    icon: "account-settings",
+    href: "/account-settings",
+  },
+];
+
 const language = [
   {
     id: 1,
@@ -148,16 +157,16 @@ export default function StudentNavbar() {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                       >
-                        <Listbox.Options className="absolute z-10 mt-2 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+                        <Listbox.Options className="absolute z-10 mt-2 w-40 bg-tph_purple border shadow-lg max-h-56 rounded-lg p-2 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                           {language.map((item) => (
                             <Listbox.Option
                               key={item.id}
                               className={({ active }) =>
                                 classNames(
                                   active
-                                    ? "text-white bg-tph_purple"
+                                    ? "text-white bg-icon_bg"
                                     : "text-gray-900",
-                                  "cursor-pointer select-none relative py-2 pl-3 pr-9"
+                                  "cursor-pointer select-none relative p-3 pr-9 rounded-lg"
                                 )
                               }
                               value={item}
@@ -175,7 +184,7 @@ export default function StudentNavbar() {
                                         selected
                                           ? "font-semibold"
                                           : "font-normal",
-                                        "ml-3 block truncate"
+                                        "ml-3 block truncate text-white"
                                       )}
                                     >
                                       {item.name}
@@ -183,14 +192,7 @@ export default function StudentNavbar() {
                                   </div>
 
                                   {selected ? (
-                                    <span
-                                      className={classNames(
-                                        active
-                                          ? "text-white"
-                                          : "text-tph_purple",
-                                        "absolute inset-y-0 right-0 flex items-center pr-4"
-                                      )}
-                                    >
+                                    <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-white">
                                       <CheckIcon
                                         className="h-5 w-5"
                                         aria-hidden="true"
@@ -231,44 +233,43 @@ export default function StudentNavbar() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <RouterLink
-                            to="/profile"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700 flex items-center"
-                            )}
-                          >
-                            <UserIcon className="h-5 w-5" aria-hidden="true" />
-                            <p className="font-medium ml-2 mr-1">Profile</p>
-                          </RouterLink>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <RouterLink
-                            to="/account-settings"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700 flex items-center"
-                            )}
-                          >
-                            <CogIcon className="h-5 w-5" aria-hidden="true" />
-                            <p className="font-medium ml-2 mr-1">
-                              Account Settings
-                            </p>
-                          </RouterLink>
-                        )}
-                      </Menu.Item>
+                    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-60 rounded-lg shadow-lg p-2 bg-tph_purple border ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+                      {menuItems.map((item, index) => (
+                        <Menu.Item key={index}>
+                          {({ active }) => (
+                            <RouterLink
+                              to={item.href}
+                              className={classNames(
+                                active ? "bg-icon_bg" : "",
+                                "block p-3 text-sm text-white flex items-center rounded-lg"
+                              )}
+                            >
+                              {item.icon === "user" && (
+                                <UserIcon
+                                  className="h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              )}
+                              {item.icon === "account-settings" && (
+                                <CogIcon
+                                  className="h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              )}
+                              <p className="font-medium ml-2 mr-1">
+                                {item.name}
+                              </p>
+                            </RouterLink>
+                          )}
+                        </Menu.Item>
+                      ))}
+
                       <Menu.Item>
                         {({ active }) => (
                           <div
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700 flex items-center cursor-pointer"
-                            )}
+                            className={
+                              "block p-4 text-sm text-white flex items-center rounded-lg hover:bg-icon_bg cursor-pointer"
+                            }
                             onClick={logoutHandler}
                           >
                             <LogoutIcon
