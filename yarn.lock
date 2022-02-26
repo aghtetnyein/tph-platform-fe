@@ -5251,7 +5251,7 @@ internal-slot@^1.0.3:
 
 interweave@^12.9.0:
   version "12.9.0"
-  resolved "https://registry.npmjs.org/interweave/-/interweave-12.9.0.tgz"
+  resolved "https://registry.yarnpkg.com/interweave/-/interweave-12.9.0.tgz#35c5724b413288609c33b433173c1b762dc8e6ec"
   integrity sha512-VGz82ndwMdi15jtQreE8je4OGCw6GJuCmhdxh1Tu3AzT2f7OXliHCc66e2sv/Yu6vRZdSbIXBRP0jshGbXuidg==
   dependencies:
     escape-html "^1.0.3"

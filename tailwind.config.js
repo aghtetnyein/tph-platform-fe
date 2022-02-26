@@ -24,6 +24,7 @@ module.exports = {
         tph_orange: "#e68868",
         tph_orange_hover: "#F8774B",
         tph_light_orange: "#edc6bc",
+        tph_tool_tip: "#fbb615",
 
         red: "#EE5C5C",
         red_hover: "#F04747",
