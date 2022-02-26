@@ -1,6 +1,8 @@
 import { Link as RouterLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { actionCreators } from "../../redux";
+import { bindActionCreators } from "redux";
 // form
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -11,8 +13,8 @@ import Page from "../../components/utils/Page";
 import { TextField, Button } from "../../components/forms";
 import TPHLogoWithoutText from "../../assets/logos/TPHLogoWithoutText.png";
 
-// constants
-const URL = process.env.REACT_APP_API_URL;
+// APIs
+import UnAuthAPIs from "../../api/UnAuthAPIs";
 
 const schema = yup.object().shape({
   email: yup.string().email().required("Email is required"),
@@ -23,6 +25,9 @@ export default function Login() {
   // instances
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  //binding action creator
+  const { authSuccess } = bindActionCreators(actionCreators, dispatch);
 
   const {
     register,
@@ -35,49 +40,25 @@ export default function Login() {
   });
 
   const onSubmit = async (data) => {
-    await fetch(`${URL}oauth/token`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=UTF-8",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        grant_type: process.env.REACT_APP_OAUTH_GRANT_TYPE,
-        client_id: process.env.REACT_APP_OAUTH_CLIENT_ID,
-        client_secret: process.env.REACT_APP_OAUTH_CLIENT_SECRET,
-        username: data.email,
-        password: data.password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((resJson) => {
-        console.log(resJson);
-        if (resJson.access_token) {
-          dispatch({
-            type: "AUTH_SUCCESS",
-            payloads: { token: resJson.access_token },
-          });
-          navigate("/");
-        } else if (resJson.error === "invalid_grant") {
-          [
-            {
-              type: "manual",
-              name: "email",
-              message: resJson.message,
-            },
-            {
-              type: "manual",
-              name: "password",
-              message: resJson.message,
-            },
-          ].forEach(({ name, type, message }) =>
-            setError(name, { type, message })
-          );
-        }
-      })
-      .catch((err) => {
-        console.log("error is ", err);
-      });
+    const res = await UnAuthAPIs.login(data); // API call
+
+    if (res.access_token && res.refresh_token) {
+      authSuccess(res.access_token); // dispatch
+      navigate("/");
+    } else if ((res.error = "invalid_grant")) {
+      [
+        {
+          type: "manual",
+          name: "email",
+          message: res.message,
+        },
+        {
+          type: "manual",
+          name: "password",
+          message: res.message,
+        },
+      ].forEach(({ name, type, message }) => setError(name, { type, message }));
+    }
   };
 
   return (
@@ -216,7 +197,7 @@ export default function Login() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <g clip-path="url(#clip0_4183_28239)">
+                        <g clipPath="url(#clip0_4183_28239)">
                           <path
                             d="M4.3882 8.1375C4.77811 6.95787 5.53059 5.93151 6.5383 5.20483C7.54601 4.47815 8.75748 4.08828 9.99987 4.09083C11.4082 4.09083 12.6815 4.59083 13.6815 5.40917L16.5915 2.5C14.8182 0.954167 12.5457 0 9.99987 0C6.0582 0 2.66487 2.24833 1.0332 5.54167L4.3882 8.1375Z"
                             fill="#6B7280"
@@ -246,7 +227,7 @@ export default function Login() {
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                       >
-                        <g clip-path="url(#clip0_4183_28239)">
+                        <g clipPath="url(#clip0_4183_28239)">
                           <path
                             d="M4.3882 8.1375C4.77811 6.95787 5.53059 5.93151 6.5383 5.20483C7.54601 4.47815 8.75748 4.08828 9.99987 4.09083C11.4082 4.09083 12.6815 4.59083 13.6815 5.40917L16.5915 2.5C14.8182 0.954167 12.5457 0 9.99987 0C6.0582 0 2.66487 2.24833 1.0332 5.54167L4.3882 8.1375Z"
                             fill="#EA4335"

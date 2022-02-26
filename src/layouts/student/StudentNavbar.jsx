@@ -79,7 +79,10 @@ export default function StudentNavbar() {
   };
 
   return (
-    <Disclosure as="nav" className="sticky top-0 z-50 bg-tph_purple">
+    <Disclosure
+      as="nav"
+      className="bg-tph_purple sticky top-0 z-50 border-b border-gray-300"
+    >
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">

@@ -12,7 +12,16 @@ export const validateToken = (resJson) => {
             : "guest",
       },
     });
-  }
+  };
+};
+
+export const authSuccess = (token) => {
+  return async (dispatch) => {
+    dispatch({
+      type: "AUTH_SUCCESS",
+      payloads: { token },
+    });
+  };
 };
 
 export const authBufferFail = () => {
@@ -20,6 +29,5 @@ export const authBufferFail = () => {
     dispatch({
       type: "AUTH_BUFFER_FAIL",
     });
-  }
+  };
 };
-            

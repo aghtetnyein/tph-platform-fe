@@ -9,7 +9,7 @@ import {
 const Footer = () => {
   return (
     <div>
-      <div className="bg-tph_purple px-6 py-8 md:px-12 lg:px-20 lg:py-16 xl:px-40 text-white border-b border-gray-400">
+      <div className="bg-tph_purple px-6 py-8 md:px-12 lg:px-20 lg:py-16 xl:px-40 text-white border-b border-gray-300">
         <div className="lg:flex lg:justify-between">
           <div>
             <div className="flex">
