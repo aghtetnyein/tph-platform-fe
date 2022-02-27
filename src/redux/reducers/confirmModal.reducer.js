@@ -1,6 +1,6 @@
 import { MODAL_CONFIRM_OPEN, MODAL_CONFIRM_CLOSE } from "../types";
 
-const snackBarReducer = (
+const confirmModalReducer = (
   state = {
     open: false,
     title: "",
@@ -28,4 +28,4 @@ const snackBarReducer = (
   }
 };
 
-export default snackBarReducer;
+export default confirmModalReducer;

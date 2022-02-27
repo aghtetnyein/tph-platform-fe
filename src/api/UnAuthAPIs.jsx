@@ -69,7 +69,8 @@ const apiSettings = {
   },
 
   fetchUserInfo: async (userSlug, token) => {
-    const resWithAxios = await axios(`${URL}users/${userSlug}`, {
+    const resWithAxios = await axios({
+      url: `${URL}users/${userSlug}`,
       method: "GET",
       headers: { ...requestHeaders, Authorization: `Bearer ${token}` },
     })
@@ -92,6 +93,32 @@ const apiSettings = {
     //   .catch((err) => {
     //     console.log("error", err);
     //   });
+
+    return resWithAxios;
+  },
+
+  createNewAccount: async (data) => {
+    const resWithAxios = await axios({
+      url: `${URL}users`,
+      method: "POST",
+      headers: requestHeaders,
+      data: {
+        username: data.name,
+        email: data.email,
+        password: data.password,
+        gender: data.gender,
+        accountType: data.accountType,
+        DOB: data.dob,
+        school: data.school,
+      },
+    })
+      .then((response) => {
+        return response;
+      })
+      .catch((err) => {
+        console.log("error", err);
+        return err.response;
+      });
 
     return resWithAxios;
   },

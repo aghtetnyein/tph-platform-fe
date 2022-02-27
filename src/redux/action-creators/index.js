@@ -1,5 +1,5 @@
 export const validateToken = (resJson) => {
-  return async (dispatch) => {
+  return (dispatch) => {
     dispatch({
       type: "AUTH_BUFFER",
       payloads: {
@@ -16,7 +16,7 @@ export const validateToken = (resJson) => {
 };
 
 export const authSuccess = (token) => {
-  return async (dispatch) => {
+  return (dispatch) => {
     dispatch({
       type: "AUTH_SUCCESS",
       payloads: { token },
@@ -25,9 +25,30 @@ export const authSuccess = (token) => {
 };
 
 export const authBufferFail = () => {
-  return async (dispatch) => {
+  return (dispatch) => {
     dispatch({
       type: "AUTH_BUFFER_FAIL",
+    });
+  };
+};
+
+export const snackBarOpener = (contentData) => {
+  return (dispatch) => {
+    dispatch({
+      type: "SNACKBAR_OPEN",
+      payloads: {
+        status: contentData.status,
+        title: contentData.title,
+        message: contentData.message,
+      },
+    });
+  };
+};
+
+export const snackBarCloser = () => {
+  return (dispatch) => {
+    dispatch({
+      type: "SNACKBAR_CLOSE",
     });
   };
 };

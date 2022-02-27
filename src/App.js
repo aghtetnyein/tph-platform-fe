@@ -3,13 +3,14 @@ import React from "react";
 import Routes from "./Routes";
 
 // components
-import { ConfirmModal } from "./components/elements";
+import { ConfirmModal, Snackbar } from "./components/elements";
 
 const App = () => {
   return (
     <>
       <Routes />
       <ConfirmModal />
+      <Snackbar />
     </>
   );
 };

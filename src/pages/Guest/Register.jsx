@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 // components
 import Page from "../../components/utils/Page";
@@ -6,24 +7,38 @@ import Steps from "../../components/elements/Steps";
 import { RegisterAccount, AccountType } from "../../components/loginRegister";
 import TPHLogoWithoutText from "../../assets/logos/TPHLogoWithoutText.png";
 
+// APIs
+import UnAuthAPIs from "../../api/UnAuthAPIs";
+
 export default function Register() {
+  // instances
+  const navigate = useNavigate();
+
   // states
   const [steps, setSteps] = useState([
     { id: "step-1", name: "Register account", status: "current" },
     { id: "step-2", name: "Choose account type", status: "upcoming" },
   ]);
   const [currentStep, setCurrentStep] = useState("step-1");
-
   const [formValue, setFormValue] = useState({});
+  const [errors, setErrors] = useState({});
 
-  const createAccount = (accountTypeValues) => {
+  // functions
+  const createAccount = async (accountTypeValues) => {
     let tempFormValue = { ...formValue, ...accountTypeValues };
     setFormValue(tempFormValue);
 
-    console.log(tempFormValue);
-    // setFormValue({ ...formValue, accountTypeValues });
+    const res = await UnAuthAPIs.createNewAccount(tempFormValue);
 
-    // console.log(formValue);
+    if (res.status === 201) {
+      navigate("/login");
+    } else if (res.status === 422) {
+      await setErrors(res.data);
+      if (res.data.email) {
+        back("step-1");
+      }
+      // snackBarOpener({ title: "Error", message: "This is error message" }); // dispatch
+    }
   };
 
   const next = (previousStep, nextStep, registerAccountValues) => {
@@ -74,9 +89,18 @@ export default function Register() {
             </div>
 
             {currentStep === "step-1" ? (
-              <RegisterAccount next={next} />
+              <RegisterAccount
+                formValue={formValue}
+                next={next}
+                resErrors={errors}
+              />
             ) : (
-              <AccountType back={back} createAccount={createAccount} />
+              <AccountType
+                formValue={formValue}
+                back={back}
+                createAccount={createAccount}
+                resErrors={errors}
+              />
             )}
           </div>
         </div>

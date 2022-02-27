@@ -11,6 +11,7 @@ import PercentageProgressBar from "./PercentageProgressBar";
 import ProjectsCardHorizontal from "./ProjectsCardHorizontal";
 import CardWithPngAtSide from "./CardWithPngAtSide";
 import CoursesCard from "./CoursesCard";
+import Snackbar from "./Snackbar";
 
 export {
   CardHorizontal,
@@ -26,4 +27,5 @@ export {
   ProjectsCardHorizontal,
   CardWithPngAtSide,
   CoursesCard,
+  Snackbar,
 };

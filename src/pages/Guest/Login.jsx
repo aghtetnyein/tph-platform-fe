@@ -27,7 +27,10 @@ export default function Login() {
   const navigate = useNavigate();
 
   //binding action creator
-  const { authSuccess } = bindActionCreators(actionCreators, dispatch);
+  const { authSuccess, snackBarOpener } = bindActionCreators(
+    actionCreators,
+    dispatch
+  );
 
   const {
     register,
@@ -44,6 +47,11 @@ export default function Login() {
 
     if (res.status === 200) {
       authSuccess(res.data.access_token); // dispatch
+      snackBarOpener({
+        status: "success",
+        title: "Success",
+        message: "Login success",
+      });
       navigate("/");
     } else if (res.status === 400) {
       [

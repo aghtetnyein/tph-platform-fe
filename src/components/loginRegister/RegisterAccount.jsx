@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 // form
@@ -27,20 +27,37 @@ const schema = yup.object({
   termsAndConditions: yup.bool().oneOf([true], "Field must be checked"),
 });
 
-const RegisterAccount = ({ next }) => {
+const RegisterAccount = ({ formValue, next, resErrors }) => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
     // reset,
   } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      name: formValue.name,
+      email: formValue.email,
+    },
   });
 
   const onSubmit = (data) => {
-    console.log(data);
     next("step-1", "step-2", data);
   };
+
+  useEffect(() => {
+    if (resErrors.email) {
+      [
+        {
+          type: "manual",
+          name: "email",
+          message: resErrors.email[0],
+        },
+      ].forEach(({ name, type, message }) => setError(name, { type, message }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [resErrors]);
 
   return (
     <div>
