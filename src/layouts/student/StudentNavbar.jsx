@@ -54,6 +54,7 @@ export default function StudentNavbar() {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const languageFromRedux = useSelector((state) => state.language);
+  const authorizeUser = useSelector((state) => state.data.user);
 
   // states
   const [selected, setSelected] = useState(languageFromRedux);
@@ -223,7 +224,7 @@ export default function StudentNavbar() {
                         alt="profile-img"
                       />
                       <p className="text-white font-semibold ml-2 mr-1">
-                        Mg Mg
+                        {authorizeUser.username}
                       </p>
                     </Menu.Button>
                   </div>

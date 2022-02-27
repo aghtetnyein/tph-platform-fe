@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import moment from "moment";
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router";
+
+// utils
+import Page from "../../components/utils/Page";
 
 // components
 import { Button } from "../../components/forms";
@@ -141,120 +144,122 @@ const DancePartyDashboard = () => {
   };
 
   return (
-    <div className="h-full">
-      <div
-        className="w-full bg-tertiary_white"
-        style={{
-          backgroundImage: `url(${DancePartyBg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-        }}
-      >
+    <Page title="Character Gallery | TPH Dance Party">
+      <div className="h-full">
         <div
-          className="w-full px-6 py-16 md:px-12 lg:px-20 lg:py-24 xl:px-40"
-          style={{ background: "rgba(0,0,0, 0.3)" }}
+          className="w-full bg-tertiary_white"
+          style={{
+            backgroundImage: `url(${DancePartyBg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
         >
-          <h2 className="text-xl lg:text-3xl font-extrabold text-white">
-            Welcome to Dance Party
-          </h2>
-          <p className="mt-4 font-medium text-gray-300 text-lg md:w-2/3 xl:w-1/2">
-            In this lesson, you can learn how to programmactically make MYANMAR
-            dance to characters. You can favouritely programm the chracters and
-            the dances.
-          </p>
+          <div
+            className="w-full px-6 py-16 md:px-12 lg:px-20 lg:py-24 xl:px-40"
+            style={{ background: "rgba(0,0,0, 0.3)" }}
+          >
+            <h2 className="text-xl lg:text-3xl font-extrabold text-white">
+              Welcome to Dance Party
+            </h2>
+            <p className="mt-4 font-medium text-gray-300 text-lg md:w-2/3 xl:w-1/2">
+              In this lesson, you can learn how to programmactically make
+              MYANMAR dance to characters. You can favouritely programm the
+              chracters and the dances.
+            </p>
 
-          <div className="mt-12 w-36">
-            <Button
-              type={"button"}
-              variant={"secondary"}
-              label={"Let's Rock!"}
-            />
+            <div className="mt-12 w-36">
+              <Button
+                type={"button"}
+                variant={"secondary"}
+                label={"Let's Rock!"}
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="px-6 py-8 md:px-12 lg:px-20 lg:py-16 xl:px-40">
-        <DashboardTitle
-          title={"Let's dance together!"}
-          subtitle={"Create dances with code"}
-        />
-        <div className="mt-8 grid md:grid-cols-1 lg:grid-cols-2 gap-4">
-          {DancePartyDetails.map((item, index) => (
-            <div key={index}>
-              <CardHorizontal
-                image={item.image}
-                title={item.title}
-                subtitle={item.subtitle}
-                buttonLabel={item.buttonLabel}
-                postfixIcon={item.postfixIcon}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="px-6 py-8 md:px-12 lg:px-20 lg:py-16 xl:px-40">
-        <DashboardTitle
-          title={"Who are the dancers?"}
-          subtitle={"Myanmar festivals and traditional characters"}
-        />
-        <p className="mt-8 font-semibold text-gray-800">
-          Read the history of the dance characters and learn code favorably.
-          Click "Read more" button to know more about the dancers.
-        </p>
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {DancersDetails.map((item, index) => (
-            <div key={index}>
-              <CardVertical
-                image={item.image}
-                title={item.title}
-                body={item.body}
-                buttonLabel={item.buttonLabel}
-                postfixIcon={item.postfixIcon}
-                url={item.url}
-                handleOnClick={() => handleClick(item.url)}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="px-6 py-8 md:px-12 lg:px-20 lg:py-16 xl:px-40">
-        <DashboardTitle
-          title={"Creators best works"}
-          subtitle={"Projects of students"}
-        />
-        <p className="mt-8 font-semibold text-gray-800">
-          Most popular projects in the Dance Party. Create your work the best
-          you can.
-        </p>
-        <div className="mt-4">
-          <TabsWithUnderline
-            tabsOptions={tabsOptions}
-            currentTab={currentTab}
-            changeTab={changeTab}
+        <div className="px-6 py-8 md:px-12 lg:px-20 lg:py-16 xl:px-40">
+          <DashboardTitle
+            title={"Let's dance together!"}
+            subtitle={"Create dances with code"}
           />
+          <div className="mt-8 grid md:grid-cols-1 lg:grid-cols-2 gap-4">
+            {DancePartyDetails.map((item, index) => (
+              <div key={index}>
+                <CardHorizontal
+                  image={item.image}
+                  title={item.title}
+                  subtitle={item.subtitle}
+                  buttonLabel={item.buttonLabel}
+                  postfixIcon={item.postfixIcon}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {popularProjects.map((item, index) => (
-            <div key={index}>
-              <CardVertical
-                image={item.image}
-                title={item.title}
-                body={item.body}
-                avatar={item.avatar}
-                projectTitle={item.projectTitle}
-                date={item.date}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
 
-      <Footer />
-    </div>
+        <div className="px-6 py-8 md:px-12 lg:px-20 lg:py-16 xl:px-40">
+          <DashboardTitle
+            title={"Who are the dancers?"}
+            subtitle={"Myanmar festivals and traditional characters"}
+          />
+          <p className="mt-8 font-semibold text-gray-800">
+            Read the history of the dance characters and learn code favorably.
+            Click "Read more" button to know more about the dancers.
+          </p>
+          <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {DancersDetails.map((item, index) => (
+              <div key={index}>
+                <CardVertical
+                  image={item.image}
+                  title={item.title}
+                  body={item.body}
+                  buttonLabel={item.buttonLabel}
+                  postfixIcon={item.postfixIcon}
+                  url={item.url}
+                  handleOnClick={() => handleClick(item.url)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="px-6 py-8 md:px-12 lg:px-20 lg:py-16 xl:px-40">
+          <DashboardTitle
+            title={"Creators best works"}
+            subtitle={"Projects of students"}
+          />
+          <p className="mt-8 font-semibold text-gray-800">
+            Most popular projects in the Dance Party. Create your work the best
+            you can.
+          </p>
+          <div className="mt-4">
+            <TabsWithUnderline
+              tabsOptions={tabsOptions}
+              currentTab={currentTab}
+              changeTab={changeTab}
+            />
+          </div>
+          <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {popularProjects.map((item, index) => (
+              <div key={index}>
+                <CardVertical
+                  image={item.image}
+                  title={item.title}
+                  body={item.body}
+                  avatar={item.avatar}
+                  projectTitle={item.projectTitle}
+                  date={item.date}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Footer />
+      </div>
+    </Page>
   );
 };
 

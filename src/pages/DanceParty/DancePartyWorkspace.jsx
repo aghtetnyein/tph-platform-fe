@@ -5,6 +5,9 @@ import hammer from "../../DancePartyUtils/P5Utils/metadata/hammer.json";
 import injectInterpreted from "../../DancePartyUtils/P5Utils/injectInterpreted";
 import constants from "../../DancePartyUtils/P5Utils/constants";
 
+//utils
+import Page from "../../components/utils/Page";
+
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import interpreted from "!!raw-loader!../../DancePartyUtils/P5Utils/p5.dance.interpreted.js";
 
@@ -244,112 +247,114 @@ export default class Dance extends Component {
   render() {
     return (
       <>
-        <div className="w-screen h-full flex bg-tph_purple">
-          <div className="px-3 py-5">
-            <Select
-              name={"songs"}
-              items={this.songs}
-              currentItem={this.state.songName}
-              handleChange={(event) => this.handleSongChange(event)}
-            />
-            <div className="mt-12 mb-4">
-              <TabsInPills
-                items={this.state.tabItems}
-                currentTab={this.state.currentTab}
-                handleTabChange={this.tabChange}
+        <Page title="Workspace | TPH Dance Party">
+          <div className="w-screen h-full flex bg-tph_purple">
+            <div className="px-3 py-5">
+              <Select
+                name={"songs"}
+                items={this.songs}
+                currentItem={this.state.songName}
+                handleChange={(event) => this.handleSongChange(event)}
               />
-            </div>
-            <div
-              className={`${
-                this.state.currentTab === "Canvas" ? "block" : "hidden"
-              } mx-auto my-4`}
-              style={{ width: "100%" }}
-              ref={this.myDanceBoxRef}
-            ></div>
+              <div className="mt-12 mb-4">
+                <TabsInPills
+                  items={this.state.tabItems}
+                  currentTab={this.state.currentTab}
+                  handleTabChange={this.tabChange}
+                />
+              </div>
+              <div
+                className={`${
+                  this.state.currentTab === "Canvas" ? "block" : "hidden"
+                } mx-auto my-4`}
+                style={{ width: "100%" }}
+                ref={this.myDanceBoxRef}
+              ></div>
 
-            <div
-              className={`${
-                this.state.currentTab === "Code" ? "block" : "hidden"
-              } mx-auto my-4`}
-            >
-              <CodeMirror value={this.state.dancePartyCode} />
-            </div>
-            <div className="flex space-x-2">
-              <Button
-                type={"button"}
-                variant={"primary"}
-                prefixIcon={playIcon}
-                label={"Play"}
-                handleClick={this.onRun}
-              />
-              <Button
-                type={"button"}
-                variant={"primary"}
-                prefixIcon={stopIcon}
-                label={"Stop"}
-                handleClick={this.onStop}
-              />
-            </div>
-          </div>
-          <div className="w-full h-full relative">
-            <div className="px-5 py-3 bg-icon_bg flex items-center justify-between">
-              <div className="flex space-x-1">
-                {[...Array(5).keys()].map((i, index) => (
-                  <div key={index}>
-                    <StageCircles item={i} />
-                  </div>
-                ))}
+              <div
+                className={`${
+                  this.state.currentTab === "Code" ? "block" : "hidden"
+                } mx-auto my-4`}
+              >
+                <CodeMirror value={this.state.dancePartyCode} />
               </div>
               <div className="flex space-x-2">
                 <Button
                   type={"button"}
-                  variant={"border"}
-                  prefixIcon={hintIcon}
-                  label={"Hints"}
-                  handleClick={() =>
-                    this.setState({
-                      showHints: !this.state.showHints,
-                    })
-                  }
+                  variant={"primary"}
+                  prefixIcon={playIcon}
+                  label={"Play"}
+                  handleClick={this.onRun}
                 />
                 <Button
                   type={"button"}
-                  variant={"border"}
-                  prefixIcon={instructionIcon}
-                  label={"Instructions"}
-                  handleClick={() =>
-                    this.setState({
-                      showInstructions: !this.state.showInstructions,
-                    })
-                  }
-                />
-                <Button
-                  type={"button"}
-                  variant={"border"}
-                  prefixIcon={resetIcon}
-                  label={"Reset"}
-                  handleClick={() => console.log("restart")}
+                  variant={"primary"}
+                  prefixIcon={stopIcon}
+                  label={"Stop"}
+                  handleClick={this.onStop}
                 />
               </div>
             </div>
+            <div className="w-full h-full relative">
+              <div className="px-5 py-3 bg-icon_bg flex items-center justify-between">
+                <div className="flex space-x-1">
+                  {[...Array(5).keys()].map((i, index) => (
+                    <div key={index}>
+                      <StageCircles item={i} />
+                    </div>
+                  ))}
+                </div>
+                <div className="flex space-x-2">
+                  <Button
+                    type={"button"}
+                    variant={"border"}
+                    prefixIcon={hintIcon}
+                    label={"Hints"}
+                    handleClick={() =>
+                      this.setState({
+                        showHints: !this.state.showHints,
+                      })
+                    }
+                  />
+                  <Button
+                    type={"button"}
+                    variant={"border"}
+                    prefixIcon={instructionIcon}
+                    label={"Instructions"}
+                    handleClick={() =>
+                      this.setState({
+                        showInstructions: !this.state.showInstructions,
+                      })
+                    }
+                  />
+                  <Button
+                    type={"button"}
+                    variant={"border"}
+                    prefixIcon={resetIcon}
+                    label={"Reset"}
+                    handleClick={() => console.log("restart")}
+                  />
+                </div>
+              </div>
 
-            {/* Hints */}
-            <Hints showHints={this.state.showHints} />
+              {/* Hints */}
+              <Hints showHints={this.state.showHints} />
 
-            {/* Instructions */}
-            <div
-              className={`p-2 pt-0 bg-icon_bg w-full ${
-                this.state.showInstructions ? "block" : "hidden"
-              }`}
-            >
-              <Instructions />
-            </div>
+              {/* Instructions */}
+              <div
+                className={`p-2 pt-0 bg-icon_bg w-full ${
+                  this.state.showInstructions ? "block" : "hidden"
+                }`}
+              >
+                <Instructions />
+              </div>
 
-            <div className="h-full">
-              <DancePartyBlockly setCode={this.setCode} />
+              <div className="h-full">
+                <DancePartyBlockly setCode={this.setCode} />
+              </div>
             </div>
           </div>
-        </div>
+        </Page>
       </>
     );
   }

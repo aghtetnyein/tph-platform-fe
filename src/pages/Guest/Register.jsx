@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { actionCreators } from "../../redux";
+import { bindActionCreators } from "redux";
 
 // components
 import Page from "../../components/utils/Page";
@@ -12,6 +15,7 @@ import UnAuthAPIs from "../../api/UnAuthAPIs";
 
 export default function Register() {
   // instances
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   // states
@@ -23,6 +27,9 @@ export default function Register() {
   const [formValue, setFormValue] = useState({});
   const [errors, setErrors] = useState({});
 
+  //binding action creator
+  const { snackBarOpener } = bindActionCreators(actionCreators, dispatch);
+
   // functions
   const createAccount = async (accountTypeValues) => {
     let tempFormValue = { ...formValue, ...accountTypeValues };
@@ -31,6 +38,11 @@ export default function Register() {
     const res = await UnAuthAPIs.createNewAccount(tempFormValue);
 
     if (res.status === 201) {
+      snackBarOpener({
+        status: "success",
+        title: "Success",
+        message: "Your account has been created. Please login.",
+      }); // dispatch
       navigate("/login");
     } else if (res.status === 422) {
       await setErrors(res.data);

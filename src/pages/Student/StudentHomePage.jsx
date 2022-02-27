@@ -138,7 +138,7 @@ const EnrolledCourses = [
 
 const StudentHomePage = () => {
   return (
-    <Page title="Student  | TPH Dance Party">
+    <Page title="Student | TPH Dance Party">
       <div className="h-full">
         <div
           className="w-full bg-tertiary_white h-full"

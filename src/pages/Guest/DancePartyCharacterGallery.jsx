@@ -1,5 +1,8 @@
 import React from "react";
 
+// utils
+import Page from "../../components/utils/Page";
+
 //Components
 import { DashboardTitle, Footer } from "../../components/elements";
 import { Button } from "../../components/forms";
@@ -38,7 +41,7 @@ const likeButton = (
 
 const DancePartyCharacterGallery = () => {
   return (
-    <>
+    <Page title="Character Gallery | TPH Dance Party">
       <div>
         <div className="flex justify-center mt-16 mb-14 relative">
           <img
@@ -169,7 +172,7 @@ const DancePartyCharacterGallery = () => {
 
         <Footer />
       </div>
-    </>
+    </Page>
   );
 };
 

@@ -132,7 +132,7 @@ const StudentProjects = () => {
   };
 
   return (
-    <Page title="Lessons | TPH Dance Party">
+    <Page title="Projects | TPH Dance Party">
       <div className="h-full">
         <div
           className="w-full bg-tertiary_white h-96"

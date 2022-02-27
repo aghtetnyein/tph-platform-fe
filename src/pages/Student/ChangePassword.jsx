@@ -66,7 +66,7 @@ const Profile = () => {
   };
 
   return (
-    <Page title="Edit profile | Account Settings">
+    <Page title="Change Password | Account Settings">
       <div className="lg:flex px-6 py-8 md:px-12 lg:px-20 lg:py-12 xl:px-48 lg:space-x-8 h-full w-full">
         <div className="hidden lg:block w-1/3">
           <AccountSettingsSidebar urlLastSegment="change-password" />
