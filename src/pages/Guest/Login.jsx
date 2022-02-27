@@ -42,20 +42,20 @@ export default function Login() {
   const onSubmit = async (data) => {
     const res = await UnAuthAPIs.login(data); // API call
 
-    if (res.access_token && res.refresh_token) {
-      authSuccess(res.access_token); // dispatch
+    if (res.status === 200) {
+      authSuccess(res.data.access_token); // dispatch
       navigate("/");
-    } else if ((res.error = "invalid_grant")) {
+    } else if (res.status === 400) {
       [
         {
           type: "manual",
           name: "email",
-          message: res.message,
+          message: res.data.message,
         },
         {
           type: "manual",
           name: "password",
-          message: res.message,
+          message: res.data.message,
         },
       ].forEach(({ name, type, message }) => setError(name, { type, message }));
     }

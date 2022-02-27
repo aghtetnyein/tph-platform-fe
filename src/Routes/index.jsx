@@ -106,13 +106,22 @@ const Auth = () => {
     setAuthState({ ...authState, checked: false });
     if (token !== "") {
       const userSlug = await UnAuthAPIs.fetchUserSlug(token, setAuthState); //API
-      const userInfo = await UnAuthAPIs.fetchUserInfo(userSlug, token); //API
-      if (userSlug && userInfo) {
-        validateToken(userInfo); //dispatch
-        setAuthState({
-          checked: true,
-          validate: true,
-        });
+
+      if (userSlug.status === 200) {
+        const userInfo = await UnAuthAPIs.fetchUserInfo(userSlug.data, token); //API
+        if (userInfo.status === 200) {
+          validateToken(userInfo.data); //dispatch
+          setAuthState({
+            checked: true,
+            validate: true,
+          });
+        } else {
+          authBufferFail(); //dispatch
+          setAuthState({
+            checked: true,
+            validate: false,
+          });
+        }
       } else {
         authBufferFail(); //dispatch
         setAuthState({
