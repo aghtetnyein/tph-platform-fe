@@ -224,7 +224,7 @@ export default function StudentNavbar() {
                         alt="profile-img"
                       />
                       <p className="text-white font-semibold ml-2 mr-1">
-                        {authorizeUser.username}
+                        {authorizeUser.display_name}
                       </p>
                     </Menu.Button>
                   </div>

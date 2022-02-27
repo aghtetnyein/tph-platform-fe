@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 // utils
 import Page from "../../components/utils/Page";
@@ -11,10 +12,6 @@ import AccountSettingsSidebar from "../../components/utils/AccountSettingsSideba
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
-const schema = yup.object({
-  school: yup.string().required("School is required"),
-});
 
 // constants
 const accountTypes = [
@@ -35,28 +32,34 @@ const accountTypes = [
 ];
 
 const ChangeAccountTypeSettings = () => {
+  // instances
+  const accountType = useSelector((state) => state.data.role);
+  const authorizedUser = useSelector((state) => state.data.user);
+
   // states
   const [edit, setEdit] = useState(false);
-  const [currentAccountType, setCurrentAccountType] = useState("student");
+  const [currentAccountType, setCurrentAccountType] = useState(accountType);
 
   // functions
   const changeAccountType = (id) => {
     setCurrentAccountType(id);
   };
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    // reset,
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
-
-  const onSubmit = (data) => {
-    const formData = { accountType: currentAccountType, school: data.school };
-    console.log(formData);
+  const setEditToFalse = () => {
     setEdit(false);
+  };
+
+  const setEditToTrue = () => {
+    setEdit(true);
+  };
+
+  const parseData = {
+    authorizedUser: authorizedUser,
+    currentAccountType: currentAccountType,
+    edit: edit,
+    setEditToFalse: setEditToFalse,
+    setEditToTrue: setEditToTrue,
+    changeAccountType: changeAccountType,
   };
 
   return (
@@ -72,88 +75,240 @@ const ChangeAccountTypeSettings = () => {
           </p>
 
           <div className="mt-12 space-y-6">
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div className="md:flex md:space-x-4">
-                {accountTypes.map((item, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className={`max-w-sm w-full rounded-md overflow-hidden border border-gray-300 hover:shadow-lg cursor-pointer mt-4 md:mt-0 ${
-                        item.id === currentAccountType
-                          ? "bg-tph_orange text-white"
-                          : null
-                      }`}
-                      onClick={() => {
-                        changeAccountType(item.id);
-                      }}
-                    >
-                      <div className="p-4">
-                        <img
-                          src={item.image}
-                          alt=""
-                          className="flex-shrink-0 h-12 w-12 rounded-full object-cover"
-                        />
-                        <div className="font-bold text-lg mt-4 mb-1">
-                          {item.name}
-                        </div>
-                        <p className="text-grey-500 text-md">{item.body}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="mt-6 md:flex md:space-x-4">
-                <div className="w-full">
-                  <TextField
-                    register={register("school")}
-                    type={"text"}
-                    name={"school"}
-                    label={"School"}
-                    autoComplete={"school"}
-                    placeholder={"eg: B.E.H.S Thuwunna"}
-                    errors={errors.school?.message}
-                    disabled={!edit}
-                    // value={"sasa@xsphere.co"}
-                  />
-                </div>
-              </div>
-
-              <div className="mt-10 flex justify-end">
-                {edit ? (
-                  <div className="flex justify-end w-full space-x-3">
-                    <div className="w-1/4">
-                      <Button
-                        type={"button"}
-                        variant={"secondary"}
-                        label={"Cancel"}
-                        handleClick={() => setEdit(false)}
-                      />
-                    </div>
-                    <div className="w-1/4">
-                      <Button
-                        type={"submit"}
-                        variant={"primary"}
-                        label={"Save"}
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <div className="w-1/4">
-                    <Button
-                      type={"button"}
-                      variant={"secondary"}
-                      label={"Edit"}
-                      handleClick={() => setEdit(true)}
-                    />
-                  </div>
-                )}
-              </div>
-            </form>
+            {currentAccountType === "student" && (
+              <AccountTypeStudentForm parseData={parseData} />
+            )}
+            {currentAccountType === "teacher" && (
+              <AccountTypeTeacherForm parseData={parseData} />
+            )}
           </div>
         </div>
       </div>
     </Page>
+  );
+};
+
+const AccountTypeStudentForm = (props) => {
+  const {
+    authorizedUser,
+    currentAccountType,
+    edit,
+    setEditToFalse,
+    setEditToTrue,
+    changeAccountType,
+  } = props.parseData;
+
+  const schema = yup.object({
+    dob: yup.string().required("Date of birth is required"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    // reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      dob: authorizedUser.DOB,
+    },
+  });
+
+  const onSubmit = (data) => {
+    const formData = {
+      accountType: currentAccountType,
+      school: null,
+      dob: data.dob,
+    };
+    console.log(formData);
+    setEditToFalse();
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="md:flex md:space-x-4">
+        {accountTypes.map((item, index) => {
+          return (
+            <div
+              key={index}
+              className={`max-w-sm w-full rounded-md overflow-hidden border border-gray-300 hover:shadow-lg cursor-pointer mt-4 md:mt-0 ${
+                item.id === currentAccountType
+                  ? "bg-tph_orange text-white"
+                  : null
+              }`}
+              onClick={() => {
+                changeAccountType(item.id);
+              }}
+            >
+              <div className="p-4">
+                <img
+                  src={item.image}
+                  alt=""
+                  className="flex-shrink-0 h-12 w-12 rounded-full object-cover"
+                />
+                <div className="font-bold text-lg mt-4 mb-1">{item.name}</div>
+                <p className="text-grey-500 text-md">{item.body}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-6 md:flex md:space-x-4">
+        <div className="w-full">
+          <TextField
+            register={register("dob")}
+            type={"text"}
+            name={"dob"}
+            label={"Date of birth"}
+            autoComplete={"dob"}
+            placeholder={"eg: 2020-07-20"}
+            errors={errors.dob?.message}
+            disabled={!edit}
+            // value={"sasa@xsphere.co"}
+          />
+        </div>
+      </div>
+
+      <div className="mt-10 flex justify-end">
+        {edit ? (
+          <div className="flex justify-end w-full space-x-3">
+            <div className="w-1/4">
+              <Button
+                type={"button"}
+                variant={"secondary"}
+                label={"Cancel"}
+                handleClick={setEditToFalse}
+              />
+            </div>
+            <div className="w-1/4">
+              <Button type={"submit"} variant={"primary"} label={"Save"} />
+            </div>
+          </div>
+        ) : (
+          <div className="w-1/4">
+            <Button
+              type={"button"}
+              variant={"secondary"}
+              label={"Edit"}
+              handleClick={setEditToTrue}
+            />
+          </div>
+        )}
+      </div>
+    </form>
+  );
+};
+
+const AccountTypeTeacherForm = (props) => {
+  const {
+    authorizedUser,
+    currentAccountType,
+    edit,
+    setEditToFalse,
+    setEditToTrue,
+    changeAccountType,
+  } = props.parseData;
+
+  const schema = yup.object({
+    school: yup.string().required("School is required"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    // reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      school: authorizedUser.school_name,
+    },
+  });
+
+  const onSubmit = (data) => {
+    const formData = {
+      accountType: currentAccountType,
+      school: data.school,
+      dob: null,
+    };
+    console.log(formData);
+    setEditToFalse();
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="md:flex md:space-x-4">
+        {accountTypes.map((item, index) => {
+          return (
+            <div
+              key={index}
+              className={`max-w-sm w-full rounded-md overflow-hidden border border-gray-300 hover:shadow-lg cursor-pointer mt-4 md:mt-0 ${
+                item.id === currentAccountType
+                  ? "bg-tph_orange text-white"
+                  : null
+              }`}
+              onClick={() => {
+                changeAccountType(item.id);
+              }}
+            >
+              <div className="p-4">
+                <img
+                  src={item.image}
+                  alt=""
+                  className="flex-shrink-0 h-12 w-12 rounded-full object-cover"
+                />
+                <div className="font-bold text-lg mt-4 mb-1">{item.name}</div>
+                <p className="text-grey-500 text-md">{item.body}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-6 md:flex md:space-x-4">
+        <div className="w-full">
+          <TextField
+            register={register("school")}
+            type={"text"}
+            name={"school"}
+            label={"School"}
+            autoComplete={"school"}
+            placeholder={"eg: B.E.H.S Thuwunna"}
+            errors={errors.school?.message}
+            disabled={!edit}
+            // value={"sasa@xsphere.co"}
+          />
+        </div>
+      </div>
+
+      <div className="mt-10 flex justify-end">
+        {edit ? (
+          <div className="flex justify-end w-full space-x-3">
+            <div className="w-1/4">
+              <Button
+                type={"button"}
+                variant={"secondary"}
+                label={"Cancel"}
+                handleClick={setEditToFalse}
+              />
+            </div>
+            <div className="w-1/4">
+              <Button type={"submit"} variant={"primary"} label={"Save"} />
+            </div>
+          </div>
+        ) : (
+          <div className="w-1/4">
+            <Button
+              type={"button"}
+              variant={"secondary"}
+              label={"Edit"}
+              handleClick={setEditToTrue}
+            />
+          </div>
+        )}
+      </div>
+    </form>
   );
 };
 

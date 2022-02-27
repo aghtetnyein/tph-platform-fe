@@ -38,7 +38,7 @@ const gender = [
     name: "Female",
   },
   {
-    id: "others",
+    id: "prefer-not-to-describe",
     name: "Prefer not to describe",
   },
 ];

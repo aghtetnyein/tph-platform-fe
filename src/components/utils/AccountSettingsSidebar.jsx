@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link as RouterLink } from "react-router-dom";
 
 // icons
@@ -80,6 +80,7 @@ const logoutItem = {
 const AccountSettingsSidebar = ({ urlLastSegment }) => {
   // instances
   const dispatch = useDispatch();
+  const authorizedUser = useSelector((state) => state.data.user);
 
   // functions
   const logoutHandler = () => {
@@ -109,9 +110,11 @@ const AccountSettingsSidebar = ({ urlLastSegment }) => {
             alt="profile"
           />
           <div>
-            <h2 className="text-md font-semibold">Phue Phue</h2>
+            <h2 className="text-md font-semibold">{authorizedUser.username}</h2>
             <div className="mt-1 flex items-center space-x-4">
-              <p className="text-sm font-medium text-tph_orange">Student</p>
+              <p className="text-sm font-medium text-tph_orange">
+                {authorizedUser.teacher === 1 ? "Teacher" : "Student"}
+              </p>
               <p className="text-sm font-medium text-gray-400">Age: 11</p>
             </div>
           </div>

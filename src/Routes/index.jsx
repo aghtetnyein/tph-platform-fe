@@ -103,7 +103,7 @@ const Auth = () => {
   // previous code
 
   const validation = async (token) => {
-    setAuthState({ ...authState, checked: false });
+    setAuthState({ checked: false, validate: false });
     if (token !== "") {
       const userSlug = await UnAuthAPIs.fetchUserSlug(token, setAuthState); //API
 

@@ -78,7 +78,7 @@ const apiSettings = {
         return response;
       })
       .catch((err) => {
-        console.log("error", err);
+        console.log("error", err.response);
         return err.response;
       });
 

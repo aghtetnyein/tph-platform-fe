@@ -26,7 +26,7 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  //binding action creator
+  // binding action creator
   const { authSuccess, snackBarOpener } = bindActionCreators(
     actionCreators,
     dispatch
@@ -130,7 +130,7 @@ export default function Login() {
                     <div className="text-sm">
                       <RouterLink
                         to={"/reset-password"}
-                        className="font-medium text-tph_orange hover:text-tph_orange_hover hover:underline"
+                        className="font-medium text-link_color hover:underline"
                       >
                         Forgot your password?
                       </RouterLink>
@@ -147,7 +147,7 @@ export default function Login() {
                     You don't have an account?{" "}
                     <RouterLink
                       to={"/register"}
-                      className="font-medium text-tph_orange hover:text-tph_orange_hover hover:underline"
+                      className="font-medium text-link_color hover:underline"
                     >
                       Create account here.
                     </RouterLink>

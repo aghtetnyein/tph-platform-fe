@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link as RouterLink } from "react-router-dom";
 
 // components
@@ -81,6 +81,7 @@ const logoutItem = {
 const AccountSettings = () => {
   // instances
   const dispatch = useDispatch();
+  const authorizedUser = useSelector((state) => state.data.user);
 
   // functions
   const logoutHandler = () => {
@@ -110,7 +111,7 @@ const AccountSettings = () => {
             />
             <div>
               <h5 className="mb-1 text-md font-semibold tracking-tight">
-                Maung Maung
+                {authorizedUser.username}
               </h5>
               <RouterLink to={"account-settings/profile"}>
                 <p className="text-sm font-semibold text-tph_orange hover:underline">

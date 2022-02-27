@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 // images
 import BookMale from "../../../assets/images/BookMale.png";
@@ -7,6 +8,9 @@ import Brain from "../../../assets/images/Brain.png";
 import Computer from "../../../assets/images/Computer.png";
 
 const DashboardTitleDivision = () => {
+  // instances
+  const authorizedUser = useSelector((state) => state.data.user);
+
   return (
     <div
       className="w-full h-full bg-tph_purple"
@@ -44,13 +48,15 @@ const DashboardTitleDivision = () => {
               />
             </div>
             <div className="ml-3">
-              <p className="text-md font-medium text-white">Tom Cook</p>
+              <p className="text-md font-medium text-white">
+                {authorizedUser.username}
+              </p>
               <div className="flex space-x-2">
                 <p className="text-sm font-medium text-tph_cyan group-hover:text-gray-200">
                   Age: 11
                 </p>
                 <p className="text-sm font-medium text-tph_gold group-hover:text-gray-200">
-                  Student
+                  {authorizedUser.teacher === 1 ? "Teacher" : "Student"}
                 </p>
               </div>
             </div>

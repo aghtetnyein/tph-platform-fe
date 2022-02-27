@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { sentenceCase } from "change-case";
+import { actionCreators } from "../../redux";
+import { bindActionCreators } from "redux";
 
 // utils
 import Page from "../../components/utils/Page";
@@ -12,47 +16,48 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+// APIs
+import StudentAPIs from "../../api/StudentAPIs";
+
 const schema = yup.object({
   name: yup.string().required("Name is required"),
-  email: yup.string().email().required("Email is required"),
+  dob: yup.string().required("Date of birth is required"),
 });
 
-// constants
-const gender = [
-  {
-    id: "male",
-    name: "Male",
-  },
-  {
-    id: "female",
-    name: "Female",
-  },
-  {
-    id: "others",
-    name: "Prefer not to describe",
-  },
-];
-
-const age = [
-  {
-    id: 11,
-    name: "11",
-  },
-  {
-    id: 12,
-    name: "12",
-  },
-  {
-    id: 13,
-    name: "13",
-  },
-];
-
 const Profile = () => {
+  // instances
+  const dispatch = useDispatch();
+
+  // redux-states
+  const token = useSelector((state) => state.auth.token);
+  const authorizedUser = useSelector((state) => state.data.user);
+
+  // binding action creator
+  const { snackBarOpener } = bindActionCreators(actionCreators, dispatch);
+
+  // constants
+  const gender = [
+    {
+      id: "male",
+      name: "Male",
+    },
+    {
+      id: "female",
+      name: "Female",
+    },
+    {
+      id: "prefer-not-to-describe",
+      name: "Prefer not to describe",
+    },
+  ];
+  const authorizedUserGender = {
+    id: authorizedUser.gender,
+    name: sentenceCase(authorizedUser.gender),
+  };
+
   // states
   const [edit, setEdit] = useState(false);
-  const [currentGender, setCurrentGender] = useState(gender[0]);
-  const [currentAge, setCurrentAge] = useState(age[0]);
+  const [currentGender, setCurrentGender] = useState(authorizedUserGender);
 
   const {
     register,
@@ -61,27 +66,45 @@ const Profile = () => {
     // reset,
   } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      name: authorizedUser.username,
+      dob: authorizedUser.DOB,
+      gender: authorizedUser.gender,
+    },
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const formData = {
       name: data.name,
-      email: data.email,
+      email: authorizedUser.email,
+      dob: data.dob,
       gender: currentGender.id,
-      age: currentAge.id,
     };
 
-    console.log(formData);
+    const res = await StudentAPIs.editProfile(
+      authorizedUser.slug,
+      formData,
+      token
+    );
+    if (res.status === 202) {
+      snackBarOpener({
+        status: "success",
+        title: "Success",
+        message: res.data.success,
+      });
+    } else {
+      snackBarOpener({
+        status: "error",
+        title: "Error",
+        message: "Something went wrong.",
+      });
+    }
     setEdit(false);
   };
 
   // functions
   const handleOnChangeGender = (value) => {
     setCurrentGender(value);
-  };
-
-  const handleOnChangeAge = (value) => {
-    setCurrentAge(value);
   };
 
   return (
@@ -99,7 +122,9 @@ const Profile = () => {
               alt="profile"
             />
             <div>
-              <h2 className="text-md font-semibold">Phue Phue</h2>
+              <h2 className="text-md font-semibold">
+                {authorizedUser.username}
+              </h2>
               <div className="mt-1 flex flex-col md:flex-row items-center md:space-x-4">
                 <div>
                   <Button
@@ -141,12 +166,15 @@ const Profile = () => {
                 </div>
 
                 <div className="mt-6 w-full">
-                  <Select
-                    name={"age"}
-                    label={"Age"}
-                    items={age}
-                    currentItem={currentAge}
-                    handleChange={handleOnChangeAge}
+                  <TextField
+                    register={register("dob")}
+                    type={"text"}
+                    name={"dob"}
+                    label={"Date of birth"}
+                    autoComplete={"dob"}
+                    placeholder={"eg: 2020-07-12"}
+                    errors={errors.dob?.message}
+                    // value={"sasa@xsphere.co"}
                     disabled={!edit}
                   />
                 </div>
@@ -172,8 +200,8 @@ const Profile = () => {
                     autoComplete={"email"}
                     placeholder={"eg: maungmaung@gmail.com"}
                     errors={errors.email?.message}
-                    // value={"sasa@xsphere.co"}
-                    disabled={!edit}
+                    value={authorizedUser.email}
+                    disabled
                   />
                 </div>
               </div>
